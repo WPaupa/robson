@@ -1,0 +1,126 @@
+{
+    "typ": "Blok",
+    "instrukcje": [
+        {
+            "typ": "Przypisanie",
+            "nazwa": "numer",
+            "wyrazenie": {
+                "typ": "Liczba",
+                "wartosc": 10
+            }
+        },
+        {
+            "typ": "Warunek",
+            "wyrazenie": {
+                "typ": "<=",
+                "argument1": {
+                    "typ": "Zmienna",
+                    "nazwa": "numer"
+                },
+                "argument2": {
+                    "typ": "Liczba",
+                    "wartosc": 2
+                }
+            },
+            "blok_prawda": {
+                "typ": "Blok",
+                "instrukcje": [
+                    {
+                        "typ": "Liczba",
+                        "wartosc": 1
+                    }
+                ]
+            },
+            "blok_falsz": {
+                "typ": "Blok",
+                "instrukcje": [
+                    {
+                        "typ": "Przypisanie",
+                        "nazwa": "x1",
+                        "wyrazenie": {
+                            "typ": "Liczba",
+                            "wartosc": 1
+                        }
+                    },
+                    {
+                        "typ": "Przypisanie",
+                        "nazwa": "x2",
+                        "wyrazenie": {
+                            "typ": "Liczba",
+                            "wartosc": 1
+                        }
+                    },
+                    {
+                        "typ": "Przypisanie",
+                        "nazwa": "index",
+                        "wyrazenie": {
+                            "typ": "Liczba",
+                            "wartosc": 3
+                        }
+                    },
+                    {
+                        "typ": "Petla",
+                        "warunek": {
+                            "typ": "<=",
+                            "argument1": {
+                                "typ": "Zmienna",
+                                "nazwa": "index"
+                            },
+                            "argument2": {
+                                "typ": "Zmienna",
+                                "nazwa": "numer"
+                            }
+                        },
+                        "blok": {
+                            "typ": "Blok",
+                            "instrukcje": [
+                                {
+                                    "typ": "Przypisanie",
+                                    "nazwa": "temp",
+                                    "wyrazenie": {
+                                        "typ": "Zmienna",
+                                        "nazwa": "x2"
+                                    }
+                                },
+                                {
+                                    "typ": "Plus",
+                                    "argument1": {
+                                        "typ": "Zmienna",
+                                        "nazwa": "x2"
+                                    },
+                                    "argument2": {
+                                        "typ": "Zmienna",
+                                        "nazwa": "x1"
+                                    }
+                                },
+                                {
+                                    "typ": "Przypisanie",
+                                    "nazwa": "x1",
+                                    "wyrazenie": {
+                                        "typ": "Zmienna",
+                                        "nazwa": "temp"
+                                    }
+                                },
+                                {
+                                    "typ": "Plus",
+                                    "argument1": {
+                                        "typ": "Zmienna",
+                                        "nazwa": "index"
+                                    },
+                                    "argument2": {
+                                        "typ": "Liczba",
+                                        "wartosc": 1
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "typ": "Zmienna",
+                        "nazwa": "x2"
+                    }
+                ]
+            }
+        }
+    ]
+}
