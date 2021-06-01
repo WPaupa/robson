@@ -1,6 +1,7 @@
 package robson.instrukcje;
 
 import com.google.gson.JsonObject;
+import robson.Robson;
 
 public class Petla implements Instrukcja {
     
@@ -24,5 +25,20 @@ public class Petla implements Instrukcja {
         
         warunek.fromJson(war);
         blok.fromJson(blo);
+    }
+
+    @Override
+    public double wykonaj() throws Robson.BladWykonania {
+        double war = warunek.wykonaj();
+        if (war != 0 && war != 1)
+            throw new Robson.BladWykonania();
+        while (war == 1) {
+            blok.wykonaj();
+            war = warunek.wykonaj();
+            if (war != 0 && war != 1)
+                throw new Robson.BladWykonania();
+        }
+        
+        return 0;
     }
 }

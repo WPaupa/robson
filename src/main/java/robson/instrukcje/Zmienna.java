@@ -1,10 +1,14 @@
 package robson.instrukcje;
 
 import com.google.gson.JsonObject;
+import robson.Robson;
 
 public class Zmienna implements Instrukcja {
     
-    String nazwa;
+    private String nazwa;
+    public String nazwa() {
+        return nazwa;
+    }
     
     @Override
     public String typ() {
@@ -15,5 +19,10 @@ public class Zmienna implements Instrukcja {
     public void fromJson(JsonObject json) {
         assert(json.get("typ").toString().equals(this.typ()));
         nazwa = json.get("nazwa").toString();
+    }
+
+    @Override
+    public double wykonaj() throws Robson.BladWykonania {
+        return Robson.wartoscZmiennej(nazwa);
     }
 }

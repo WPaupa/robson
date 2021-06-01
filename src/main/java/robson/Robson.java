@@ -6,12 +6,22 @@ import robson.instrukcje.Instrukcja;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Hashtable;
 
 
 public class Robson {
     private static class NieprawidlowyProgram extends Exception {}
-    private static class BladWykonania extends Exception {}
+    public static class BladWykonania extends Exception {}
     private Instrukcja program;
+    private static Hashtable<String, Double> zmienne;
+    
+    public static void ustawianieZmiennej(String nazwa, double wartosc) {
+        zmienne.put(nazwa, wartosc);
+    }
+    
+    public static double wartoscZmiennej(String nazwa) {
+        return zmienne.get(nazwa);
+    }
     
     public void fromJson(String filename) throws NieprawidlowyProgram {
         Gson gson = new Gson();
@@ -21,7 +31,9 @@ public class Robson {
             program = Instrukcja.nowaInstrukcja(j.get("typ").toString());
             assert program != null;
             program.fromJson(j);
+            zmienne = new Hashtable<>();
         } catch (Exception e) {
+            e.printStackTrace();
             throw new NieprawidlowyProgram();
         } 
     }
@@ -35,6 +47,6 @@ public class Robson {
     }
 
     public double wykonaj() throws BladWykonania {
-        throw new BladWykonania();
+        return program.wykonaj();
     }
 }

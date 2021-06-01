@@ -2,9 +2,12 @@ package robson.instrukcje.operacje_arytmetyczne;
 
 import com.google.gson.JsonObject;
 import robson.instrukcje.Instrukcja;
+import robson.instrukcje.Zmienna;
 
 public abstract class OperacjaArytmetyczna implements Instrukcja {
-    protected Instrukcja argument1, argument2;
+    // pakietowe, żeby były widoczne tylko w innych operacjach
+    Instrukcja argument1, argument2;
+    String nazwaZmiennej;
 
     @Override
     public void fromJson(JsonObject json) {
@@ -19,5 +22,10 @@ public abstract class OperacjaArytmetyczna implements Instrukcja {
         argument2 = Instrukcja.nowaInstrukcja(arg2.get("typ").toString());
         assert argument2 != null;
         argument2.fromJson(arg2);
+        
+        if (argument1 instanceof Zmienna) {
+            Zmienna zmienna = (Zmienna) argument1;
+            nazwaZmiennej = zmienna.nazwa();
+        }
     }
 }

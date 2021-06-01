@@ -2,6 +2,7 @@ package robson.instrukcje;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import robson.Robson;
 
 public class Blok implements Instrukcja {
     private Instrukcja[] instrukcje;
@@ -24,5 +25,13 @@ public class Blok implements Instrukcja {
             assert instrukcje[i] != null;
             instrukcje[i].fromJson(ins.get(i).getAsJsonObject());
         }
+    }
+
+    @Override
+    public double wykonaj() throws Robson.BladWykonania {
+        double wynik = 0;
+        for (Instrukcja instrukcja : instrukcje) 
+            wynik = instrukcja.wykonaj();
+        return wynik;
     }
 }

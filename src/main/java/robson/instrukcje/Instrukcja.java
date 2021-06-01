@@ -1,6 +1,7 @@
 package robson.instrukcje;
 
 import com.google.gson.JsonObject;
+import robson.Robson;
 import robson.instrukcje.operacje_arytmetyczne.*;
 import robson.instrukcje.operacje_logiczne.*;
 import robson.instrukcje.porownania.*;
@@ -10,6 +11,7 @@ public interface Instrukcja {
     String typ();
 
     void fromJson(JsonObject json);
+    double wykonaj() throws Robson.BladWykonania;
 
     // funkcja wygenerowana automatycznie
     static Instrukcja nowaInstrukcja(String nazwa) {
@@ -53,6 +55,7 @@ public interface Instrukcja {
             return new Warunek();
         if (nazwa.equals(new Zmienna().typ()))
             return new Zmienna();
+        System.out.println(nazwa);
         return null;
     }
     

@@ -11,6 +11,7 @@ public class UnitTest extends TestCase {
         try {
             Robson robson = new Robson();
             robson.fromJson("przyklad1.json");
+            System.out.println(robson.wykonaj());
         } catch (Exception e) {
             e.printStackTrace();
             assert false;
@@ -20,6 +21,7 @@ public class UnitTest extends TestCase {
         try {
             Robson robson = new Robson();
             robson.fromJson("fibonacci.json");
+            System.out.println(robson.wykonaj());
         } catch (Exception e) {
             e.printStackTrace();
             assert false;
