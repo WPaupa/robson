@@ -4,8 +4,16 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import robson.Robson;
 
+import java.util.Objects;
+
 public class Blok implements Instrukcja {
     private Instrukcja[] instrukcje;
+    private Robson robson;
+
+    @Override
+    public void robson(Robson robson) {
+        this.robson = robson;
+    }
 
     @Override
     public String typ() {
@@ -23,6 +31,7 @@ public class Blok implements Instrukcja {
         for (int i = 0; i < ins.size(); i++) {
             instrukcje[i] = Instrukcja.nowaInstrukcja(ins.get(i).getAsJsonObject().get("typ").toString());
             assert instrukcje[i] != null;
+            instrukcje[i].robson(robson);
             instrukcje[i].fromJson(ins.get(i).getAsJsonObject());
         }
     }

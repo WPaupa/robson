@@ -14,7 +14,7 @@ public class Razy extends OperacjaArytmetyczna {
         double arg1 = argument1.wykonaj();
         double arg2 = argument2.wykonaj();
         if (nazwaZmiennej != null)
-            Robson.ustawianieZmiennej(nazwaZmiennej, arg1 * arg2);
+            robson.ustawianieZmiennej(nazwaZmiennej, arg1 * arg2);
         return arg1 * arg2;
     }
 }

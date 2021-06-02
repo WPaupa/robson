@@ -5,6 +5,11 @@ import robson.Robson;
 
 public class Liczba implements Instrukcja {
     private double wartosc;
+    
+    // nie potrzebujemy robsona
+    @Override
+    public void robson(Robson robson) {
+    }
 
     @Override
     public String typ() {

@@ -6,6 +6,12 @@ import robson.Robson;
 public class Negacja implements Instrukcja {
     
     private Instrukcja argument;
+    private Robson robson;
+
+    @Override
+    public void robson(Robson robson) {
+        this.robson = robson;
+    }
     
     @Override
     public String typ() {
@@ -19,6 +25,7 @@ public class Negacja implements Instrukcja {
         JsonObject arg = json.get("argument").getAsJsonObject();
         argument = Instrukcja.nowaInstrukcja(arg.get("typ").toString());
         assert argument != null;
+        argument.robson(robson);
         argument.fromJson(arg);
     }
 

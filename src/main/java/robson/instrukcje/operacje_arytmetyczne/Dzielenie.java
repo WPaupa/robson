@@ -15,7 +15,7 @@ public class Dzielenie extends OperacjaArytmetyczna {
         if (arg2 == 0)
             throw new Robson.BladWykonania();
         if (nazwaZmiennej != null)
-            Robson.ustawianieZmiennej(nazwaZmiennej, arg1 / arg2);
+            robson.ustawianieZmiennej(nazwaZmiennej, arg1 / arg2);
         return arg1 / arg2;
     }
 }

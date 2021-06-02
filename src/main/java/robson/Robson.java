@@ -13,23 +13,25 @@ public class Robson {
     private static class NieprawidlowyProgram extends Exception {}
     public static class BladWykonania extends Exception {}
     private Instrukcja program;
-    private static Hashtable<String, Double> zmienne;
+    private Hashtable<String, Double> zmienne;
+    private String json;
     
-    public static void ustawianieZmiennej(String nazwa, double wartosc) {
+    public void ustawianieZmiennej(String nazwa, double wartosc) {
         zmienne.put(nazwa, wartosc);
     }
     
-    public static double wartoscZmiennej(String nazwa) {
+    public double wartoscZmiennej(String nazwa) {
         return zmienne.get(nazwa);
     }
     
     public void fromJson(String filename) throws NieprawidlowyProgram {
         Gson gson = new Gson();
         try {
-            String json = Files.readString(Path.of(filename));
+            json = Files.readString(Path.of(filename));
             JsonObject j = gson.fromJson(json, JsonObject.class);
             program = Instrukcja.nowaInstrukcja(j.get("typ").toString());
             assert program != null;
+            program.robson(this);
             program.fromJson(j);
             zmienne = new Hashtable<>();
         } catch (Exception e) {
@@ -39,7 +41,11 @@ public class Robson {
     }
 
     public void toJson(String filename) {
-        
+        try {
+            Files.writeString(Path.of(filename), json);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void toJava(String filename) {

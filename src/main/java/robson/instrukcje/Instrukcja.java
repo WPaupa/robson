@@ -12,6 +12,7 @@ public interface Instrukcja {
 
     void fromJson(JsonObject json);
     double wykonaj() throws Robson.BladWykonania;
+    void robson(Robson robson);
 
     // funkcja wygenerowana automatycznie
     static Instrukcja nowaInstrukcja(String nazwa) {

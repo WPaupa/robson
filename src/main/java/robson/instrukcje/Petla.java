@@ -7,6 +7,12 @@ public class Petla implements Instrukcja {
     
     private Instrukcja warunek;
     private Instrukcja blok;
+    private Robson robson;
+
+    @Override
+    public void robson(Robson robson) {
+        this.robson = robson;
+    }
     
     @Override
     public String typ() {
@@ -22,6 +28,12 @@ public class Petla implements Instrukcja {
         
         warunek = Instrukcja.nowaInstrukcja(war.get("typ").toString());
         blok = Instrukcja.nowaInstrukcja(blo.get("typ").toString());
+        
+        assert warunek != null;
+        assert blok != null;
+
+        warunek.robson(robson);
+        blok.robson(robson);
         
         warunek.fromJson(war);
         blok.fromJson(blo);

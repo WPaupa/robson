@@ -7,6 +7,12 @@ public class Przypisanie implements Instrukcja {
     
     private String nazwa;
     private Instrukcja wartosc;
+    private Robson robson;
+
+    @Override
+    public void robson(Robson robson) {
+        this.robson = robson;
+    }
     
     @Override
     public String typ() {
@@ -20,6 +26,7 @@ public class Przypisanie implements Instrukcja {
         JsonObject wart = json.get("wyrazenie").getAsJsonObject();
         wartosc = Instrukcja.nowaInstrukcja(wart.get("typ").toString());
         assert wartosc != null;
+        wartosc.robson(robson);
         wartosc.fromJson(wart);
         
         nazwa = json.get("nazwa").toString();
@@ -28,7 +35,7 @@ public class Przypisanie implements Instrukcja {
     @Override
     public double wykonaj() throws Robson.BladWykonania {
         double war = wartosc.wykonaj();
-        Robson.ustawianieZmiennej(nazwa, war);
+        robson.ustawianieZmiennej(nazwa, war);
         return war;
     }
 }

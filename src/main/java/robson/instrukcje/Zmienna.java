@@ -9,6 +9,11 @@ public class Zmienna implements Instrukcja {
     public String nazwa() {
         return nazwa;
     }
+    private Robson robson;
+    @Override
+    public void robson(Robson robson) {
+        this.robson = robson;
+    }
     
     @Override
     public String typ() {
@@ -23,6 +28,6 @@ public class Zmienna implements Instrukcja {
 
     @Override
     public double wykonaj() throws Robson.BladWykonania {
-        return Robson.wartoscZmiennej(nazwa);
+        return robson.wartoscZmiennej(nazwa);
     }
 }
