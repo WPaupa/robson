@@ -49,10 +49,22 @@ public class Robson {
     }
 
     public void toJava(String filename) {
-        
+        try {
+            program.wykonaj();
+            for (String k : zmienne.keySet()) {
+                System.out.println("double " + k.substring(1, k.length()-1) + " = 0;");
+            }
+            zmienne = new Hashtable<>();
+        } catch (Exception ignored) {
+        }
+        System.out.println("double a = 0;");
+        System.out.println(program.toJava("a"));
+        System.out.println("System.out.println(a);");
     }
 
     public double wykonaj() throws BladWykonania {
-        return program.wykonaj();
+        double wynik = program.wykonaj();
+        this.zmienne = new Hashtable<>();
+        return wynik;
     }
 }

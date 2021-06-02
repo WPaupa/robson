@@ -21,6 +21,19 @@ public class Blok implements Instrukcja {
     }
 
     @Override
+    public String toJava(String nazwaWyjscia) {
+        if (instrukcje.length == 0)
+            return nazwaWyjscia + " = 0;";
+        StringBuilder wynik = new StringBuilder("{\n");
+        for (int i = 0; i < instrukcje.length; i++) {
+            wynik.append("double ").append(nazwaWyjscia).append(i).append(" = 0;\n");
+            wynik.append(instrukcje[i].toJava(nazwaWyjscia + i)).append("\n");
+        }
+        wynik.append(nazwaWyjscia).append(" = ").append(nazwaWyjscia).append(instrukcje.length - 1).append(";\n");
+        return wynik.append("}").toString();
+    }
+    
+    @Override
     public void fromJson(JsonObject json) {
         assert(json.get("typ").toString().equals(this.typ()));
         

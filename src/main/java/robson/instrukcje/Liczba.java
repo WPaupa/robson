@@ -23,6 +23,11 @@ public class Liczba implements Instrukcja {
     }
 
     @Override
+    public String toJava(String nazwaWyjscia) {
+        return nazwaWyjscia + " = " + wartosc + ";";
+    }
+
+    @Override
     public double wykonaj() throws Robson.BladWykonania {
         return wartosc;
     }

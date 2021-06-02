@@ -27,6 +27,11 @@ public class Zmienna implements Instrukcja {
     }
 
     @Override
+    public String toJava(String nazwaWyjscia) {
+        return nazwaWyjscia + " = " + nazwa.substring(1, nazwa.length() - 1) + ";";
+    }
+
+    @Override
     public double wykonaj() throws Robson.BladWykonania {
         return robson.wartoscZmiennej(nazwa);
     }

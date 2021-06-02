@@ -40,6 +40,20 @@ public class Petla implements Instrukcja {
     }
 
     @Override
+    public String toJava(String nazwaWyjscia) {
+        String wynik = "{\n";
+        wynik += "double " + nazwaWyjscia + "w = 0, " + nazwaWyjscia + "d = 0;\n";
+        wynik += warunek.toJava(nazwaWyjscia + "w");
+        wynik += "while (" + nazwaWyjscia + "w != 0)\n{\n";
+        wynik += "double " + nazwaWyjscia + "b = 0;\n";
+        wynik += blok.toJava(nazwaWyjscia + "b") + "\n";
+        wynik += warunek.toJava(nazwaWyjscia + "d") + "\n";
+        wynik += nazwaWyjscia + "w = " + nazwaWyjscia + "d;\n";
+        wynik += "}\n " + nazwaWyjscia + " = 0;\n";
+        return wynik + "}";
+    }
+
+    @Override
     public double wykonaj() throws Robson.BladWykonania {
         double war = warunek.wykonaj();
         if (war != 0 && war != 1)

@@ -33,6 +33,15 @@ public class Przypisanie implements Instrukcja {
     }
 
     @Override
+    public String toJava(String nazwaWyjscia) {
+        String wynik = "{\n";
+        wynik += "double " + nazwaWyjscia + "w = 0;\n";
+        wynik += wartosc.toJava(nazwaWyjscia + "w") + "\n";
+        wynik += nazwaWyjscia + " = " + nazwa.substring(1, nazwa.length() - 1) + " = " + nazwaWyjscia + "w;\n";
+        return wynik + "}";
+    }
+
+    @Override
     public double wykonaj() throws Robson.BladWykonania {
         double war = wartosc.wykonaj();
         robson.ustawianieZmiennej(nazwa, war);

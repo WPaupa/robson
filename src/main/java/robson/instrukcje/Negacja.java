@@ -30,6 +30,14 @@ public class Negacja implements Instrukcja {
     }
 
     @Override
+    public String toJava(String nazwaWyjscia) {
+        String wynik = "{\n";
+        wynik += argument.toJava(nazwaWyjscia) + "\n";
+        wynik += "if (" + nazwaWyjscia + " == 0)\n " + nazwaWyjscia + " = 1;\n else\n " + nazwaWyjscia + " = 0;\n";
+        return wynik + "}";
+    }
+
+    @Override
     public double wykonaj() throws Robson.BladWykonania {
         double arg = argument.wykonaj();
         if (arg != 0 && arg != 1)

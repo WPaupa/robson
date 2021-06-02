@@ -12,22 +12,25 @@ public class UnitTest extends TestCase {
             Robson robson = new Robson();
             robson.fromJson("przyklad1.json");
             System.out.println(robson.wykonaj());
+            robson.toJava("");
         } catch (Exception e) {
             e.printStackTrace();
             assert false;
         }
     }
+
     public void testujFibonacci() {
         try {
             Robson robson = new Robson();
             robson.fromJson("fibonacci.json");
             System.out.println(robson.wykonaj());
+            robson.toJava("");
         } catch (Exception e) {
             e.printStackTrace();
             assert false;
         }
     }
-    
+
     public void testujInstrukcje() {
         try {
             System.out.println(Objects.requireNonNull(Instrukcja.nowaInstrukcja("\"Blok\"")).typ());

@@ -11,6 +11,7 @@ public interface Instrukcja {
     String typ();
 
     void fromJson(JsonObject json);
+    String toJava(String nazwaWyjscia);
     double wykonaj() throws Robson.BladWykonania;
     void robson(Robson robson);
 
@@ -56,7 +57,6 @@ public interface Instrukcja {
             return new Warunek();
         if (nazwa.equals(new Zmienna().typ()))
             return new Zmienna();
-        System.out.println(nazwa);
         return null;
     }
     
