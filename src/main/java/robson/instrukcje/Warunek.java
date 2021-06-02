@@ -19,28 +19,28 @@ public class Warunek implements Instrukcja {
     
     @Override
     public String typ() {
-        return "\"Warunek\"";
+        return "Warunek";
     }
 
     @Override
     public void fromJson(JsonObject json) {
-        assert(json.get("typ").toString().equals(this.typ()));
+        assert(json.get("typ").getAsString().equals(this.typ()));
 
         JsonObject war = json.get("wyrazenie").getAsJsonObject();
-        warunek = Instrukcja.nowaInstrukcja(war.get("typ").toString());
+        warunek = Instrukcja.nowaInstrukcja(war.get("typ").getAsString());
         assert warunek != null;
         warunek.robson(robson);
         warunek.fromJson(war);
 
         JsonObject prawda = json.get("blok_prawda").getAsJsonObject();
-        blok_prawda = Instrukcja.nowaInstrukcja(prawda.get("typ").toString());
+        blok_prawda = Instrukcja.nowaInstrukcja(prawda.get("typ").getAsString());
         assert blok_prawda != null;
         blok_prawda.robson(robson);
         blok_prawda.fromJson(prawda);
         
         if (json.has("blok_falsz")) {
             JsonObject falsz = json.get("blok_falsz").getAsJsonObject();
-            blok_falsz = Instrukcja.nowaInstrukcja(falsz.get("typ").toString());
+            blok_falsz = Instrukcja.nowaInstrukcja(falsz.get("typ").getAsString());
             assert blok_falsz != null;
             blok_falsz.robson(robson);
             blok_falsz.fromJson(falsz);

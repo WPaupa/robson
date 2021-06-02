@@ -29,7 +29,7 @@ public class Robson {
         try {
             json = Files.readString(Path.of(filename));
             JsonObject j = gson.fromJson(json, JsonObject.class);
-            program = Instrukcja.nowaInstrukcja(j.get("typ").toString());
+            program = Instrukcja.nowaInstrukcja(j.get("typ").getAsString());
             assert program != null;
             program.robson(this);
             program.fromJson(j);
@@ -52,7 +52,7 @@ public class Robson {
         try {
             program.wykonaj();
             for (String k : zmienne.keySet()) {
-                System.out.println("double " + k.substring(1, k.length()-1) + " = 0;");
+                System.out.println("double " + k + " = 0;");
             }
             zmienne = new Hashtable<>();
         } catch (Exception ignored) {

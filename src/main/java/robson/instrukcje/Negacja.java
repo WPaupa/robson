@@ -15,15 +15,15 @@ public class Negacja implements Instrukcja {
     
     @Override
     public String typ() {
-        return "\"Not\"";
+        return "Not";
     }
 
     @Override
     public void fromJson(JsonObject json) {
-        assert(json.get("typ").toString().equals(this.typ()));
+        assert(json.get("typ").getAsString().equals(this.typ()));
 
         JsonObject arg = json.get("argument").getAsJsonObject();
-        argument = Instrukcja.nowaInstrukcja(arg.get("typ").toString());
+        argument = Instrukcja.nowaInstrukcja(arg.get("typ").getAsString());
         assert argument != null;
         argument.robson(robson);
         argument.fromJson(arg);

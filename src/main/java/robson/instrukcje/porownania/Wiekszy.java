@@ -1,12 +1,11 @@
 package robson.instrukcje.porownania;
 
-import com.google.gson.JsonObject;
 import robson.Robson;
 
 public class Wiekszy extends Porownanie {
     @Override
     public String typ() {
-        return "\">\"";
+        return ">";
     }
 
     @Override

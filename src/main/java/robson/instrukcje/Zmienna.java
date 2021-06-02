@@ -17,18 +17,18 @@ public class Zmienna implements Instrukcja {
     
     @Override
     public String typ() {
-        return "\"Zmienna\"";
+        return "Zmienna";
     }
 
     @Override
     public void fromJson(JsonObject json) {
-        assert(json.get("typ").toString().equals(this.typ()));
-        nazwa = json.get("nazwa").toString();
+        assert(json.get("typ").getAsString().equals(this.typ()));
+        nazwa = json.get("nazwa").getAsString();
     }
 
     @Override
     public String toJava(String nazwaWyjscia) {
-        return nazwaWyjscia + " = " + nazwa.substring(1, nazwa.length() - 1) + ";";
+        return nazwaWyjscia + " = " + nazwa + ";";
     }
 
     @Override

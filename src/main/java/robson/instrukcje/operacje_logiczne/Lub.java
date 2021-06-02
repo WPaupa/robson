@@ -1,12 +1,11 @@
 package robson.instrukcje.operacje_logiczne;
 
-import com.google.gson.JsonObject;
 import robson.Robson;
 
 public class Lub extends OperacjaLogiczna {
     @Override
     public String typ() {
-        return "\"Or\"";
+        return "Or";
     }
 
     @Override

@@ -16,18 +16,18 @@ public class Petla implements Instrukcja {
     
     @Override
     public String typ() {
-        return "\"Petla\"";
+        return "Petla";
     }
 
     @Override
     public void fromJson(JsonObject json) {
-        assert(json.get("typ").toString().equals(this.typ()));
+        assert(json.get("typ").getAsString().equals(this.typ()));
         
         JsonObject war = json.get("warunek").getAsJsonObject();
         JsonObject blo = json.get("blok").getAsJsonObject();
         
-        warunek = Instrukcja.nowaInstrukcja(war.get("typ").toString());
-        blok = Instrukcja.nowaInstrukcja(blo.get("typ").toString());
+        warunek = Instrukcja.nowaInstrukcja(war.get("typ").getAsString());
+        blok = Instrukcja.nowaInstrukcja(blo.get("typ").getAsString());
         
         assert warunek != null;
         assert blok != null;

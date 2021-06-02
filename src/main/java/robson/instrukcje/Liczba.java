@@ -13,12 +13,12 @@ public class Liczba implements Instrukcja {
 
     @Override
     public String typ() {
-        return "\"Liczba\"";
+        return "Liczba";
     }
 
     @Override
     public void fromJson(JsonObject json) {
-        assert(json.get("typ").toString().equals(this.typ()));
+        assert(json.get("typ").getAsString().equals(this.typ()));
         wartosc = json.get("wartosc").getAsDouble();
     }
 

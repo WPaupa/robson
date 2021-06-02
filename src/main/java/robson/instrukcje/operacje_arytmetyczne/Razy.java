@@ -5,7 +5,7 @@ import robson.Robson;
 public class Razy extends OperacjaArytmetyczna {
     @Override
     public String typ() {
-        return "\"Razy\"";
+        return "Razy";
     }
     
     @Override
@@ -16,7 +16,7 @@ public class Razy extends OperacjaArytmetyczna {
         wynik += argument2.toJava(nazwaWyjscia + "2") + "\n";
         wynik += nazwaWyjscia + " = " + nazwaWyjscia + "1 * " + nazwaWyjscia + "2;\n";
         if (nazwaZmiennej != null)
-            wynik += nazwaZmiennej.substring(1, nazwaZmiennej.length() - 1) + " = " + nazwaWyjscia + ";\n";
+            wynik += nazwaZmiennej + " = " + nazwaWyjscia + ";\n";
         return wynik + "}";
     }
     

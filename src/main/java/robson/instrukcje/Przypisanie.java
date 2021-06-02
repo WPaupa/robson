@@ -16,20 +16,20 @@ public class Przypisanie implements Instrukcja {
     
     @Override
     public String typ() {
-        return "\"Przypisanie\"";
+        return "Przypisanie";
     }
 
     @Override
     public void fromJson(JsonObject json) {
-        assert(json.get("typ").toString().equals(this.typ()));
+        assert(json.get("typ").getAsString().equals(this.typ()));
         
         JsonObject wart = json.get("wyrazenie").getAsJsonObject();
-        wartosc = Instrukcja.nowaInstrukcja(wart.get("typ").toString());
+        wartosc = Instrukcja.nowaInstrukcja(wart.get("typ").getAsString());
         assert wartosc != null;
         wartosc.robson(robson);
         wartosc.fromJson(wart);
         
-        nazwa = json.get("nazwa").toString();
+        nazwa = json.get("nazwa").getAsString();
     }
 
     @Override
