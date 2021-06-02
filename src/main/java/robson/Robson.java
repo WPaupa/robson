@@ -1,5 +1,7 @@
 package robson;
 
+import com.google.googlejavaformat.java.Formatter;
+import com.google.googlejavaformat.java.FormatterException;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import robson.instrukcje.Instrukcja;
@@ -64,11 +66,19 @@ public class Robson {
         wynik.append("double a = 0;\n");
         wynik.append(program.toJava("a")).append("\n");
         wynik.append("System.out.println(a);\n}\n}");
+
+        String formatowany = wynik.toString();
+        try {
+            formatowany = new Formatter().formatSource(formatowany);
+        } catch (FormatterException e) {
+            e.printStackTrace();
+        }
+
         if (Objects.isNull(filename))
-            System.out.println(wynik);
+            System.out.println(formatowany);
         else {
             try {
-                Files.writeString(Path.of(filename), wynik);
+                Files.writeString(Path.of(filename), formatowany);
             } catch (Exception e) {
                 e.printStackTrace();
             }

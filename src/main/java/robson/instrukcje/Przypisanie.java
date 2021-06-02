@@ -37,7 +37,7 @@ public class Przypisanie implements Instrukcja {
         String wynik = "{\n";
         wynik += "double " + nazwaWyjscia + "w = 0;\n";
         wynik += wartosc.toJava(nazwaWyjscia + "w") + "\n";
-        wynik += nazwaWyjscia + " = " + nazwa.substring(1, nazwa.length() - 1) + " = " + nazwaWyjscia + "w;\n";
+        wynik += nazwaWyjscia + " = " + nazwa + " = " + nazwaWyjscia + "w;\n";
         return wynik + "}";
     }
 
