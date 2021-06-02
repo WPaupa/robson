@@ -7,6 +7,7 @@ import robson.instrukcje.Instrukcja;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Hashtable;
+import java.util.Objects;
 
 
 public class Robson {
@@ -41,7 +42,9 @@ public class Robson {
     }
 
     public void toJson(String filename) {
-        try {
+        if (Objects.isNull(filename))
+            System.out.println(json);
+        else try {
             Files.writeString(Path.of(filename), json);
         } catch (Exception e) {
             e.printStackTrace();
@@ -49,17 +52,27 @@ public class Robson {
     }
 
     public void toJava(String filename) {
+        StringBuilder wynik = new StringBuilder("public class Main\n{\npublic static void main(String[] args)\n{\n");
         try {
             program.wykonaj();
             for (String k : zmienne.keySet()) {
-                System.out.println("double " + k + " = 0;");
+                wynik.append("double ").append(k).append(" = 0;\n");
             }
             zmienne = new Hashtable<>();
         } catch (Exception ignored) {
         }
-        System.out.println("double a = 0;");
-        System.out.println(program.toJava("a"));
-        System.out.println("System.out.println(a);");
+        wynik.append("double a = 0;\n");
+        wynik.append(program.toJava("a")).append("\n");
+        wynik.append("System.out.println(a);\n}\n}");
+        if (Objects.isNull(filename))
+            System.out.println(wynik);
+        else {
+            try {
+                Files.writeString(Path.of(filename), wynik);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public double wykonaj() throws BladWykonania {
