@@ -23,13 +23,13 @@ public class Blok implements Instrukcja {
     public String toJava(String nazwaWyjscia) {
         if (instrukcje.length == 0)
             return nazwaWyjscia + " = 0;";
-        StringBuilder wynik = new StringBuilder("{\n");
+        StringBuilder wynik = new StringBuilder();
         for (int i = 0; i < instrukcje.length; i++) {
             wynik.append("double ").append(nazwaWyjscia).append(i).append(" = 0;\n");
             wynik.append(instrukcje[i].toJava(nazwaWyjscia + i)).append("\n");
         }
-        wynik.append(nazwaWyjscia).append(" = ").append(nazwaWyjscia).append(instrukcje.length - 1).append(";\n");
-        return wynik.append("}").toString();
+        wynik.append(nazwaWyjscia).append(" = ").append(nazwaWyjscia).append(instrukcje.length - 1).append(";");
+        return wynik.toString();
     }
     
     @Override

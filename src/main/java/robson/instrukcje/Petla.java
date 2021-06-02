@@ -41,7 +41,7 @@ public class Petla implements Instrukcja {
 
     @Override
     public String toJava(String nazwaWyjscia) {
-        String wynik = "{\n";
+        String wynik = "";
         wynik += "double " + nazwaWyjscia + "w = 0, " + nazwaWyjscia + "d = 0;\n";
         wynik += warunek.toJava(nazwaWyjscia + "w");
         wynik += "while (" + nazwaWyjscia + "w != 0)\n{\n";
@@ -49,8 +49,8 @@ public class Petla implements Instrukcja {
         wynik += blok.toJava(nazwaWyjscia + "b") + "\n";
         wynik += warunek.toJava(nazwaWyjscia + "d") + "\n";
         wynik += nazwaWyjscia + "w = " + nazwaWyjscia + "d;\n";
-        wynik += "}\n " + nazwaWyjscia + " = 0;\n";
-        return wynik + "}";
+        wynik += "}\n " + nazwaWyjscia + " = 0;";
+        return wynik;
     }
 
     @Override

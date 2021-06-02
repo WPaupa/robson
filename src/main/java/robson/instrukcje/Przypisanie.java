@@ -34,11 +34,11 @@ public class Przypisanie implements Instrukcja {
 
     @Override
     public String toJava(String nazwaWyjscia) {
-        String wynik = "{\n";
+        String wynik = "";
         wynik += "double " + nazwaWyjscia + "w = 0;\n";
         wynik += wartosc.toJava(nazwaWyjscia + "w") + "\n";
-        wynik += nazwaWyjscia + " = " + nazwa + " = " + nazwaWyjscia + "w;\n";
-        return wynik + "}";
+        wynik += nazwaWyjscia + " = " + nazwa + " = " + nazwaWyjscia + "w;";
+        return wynik;
     }
 
     @Override

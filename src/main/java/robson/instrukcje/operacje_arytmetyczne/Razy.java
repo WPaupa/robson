@@ -10,14 +10,14 @@ public class Razy extends OperacjaArytmetyczna {
     
     @Override
     public String toJava(String nazwaWyjscia) {
-        String wynik = "{\n";
+        String wynik = "";
         wynik += "double " + nazwaWyjscia + "1 = 0, " + nazwaWyjscia + "2 = 0;\n";
         wynik += argument1.toJava(nazwaWyjscia + "1") + "\n";
         wynik += argument2.toJava(nazwaWyjscia + "2") + "\n";
-        wynik += nazwaWyjscia + " = " + nazwaWyjscia + "1 * " + nazwaWyjscia + "2;\n";
+        wynik += nazwaWyjscia + " = " + nazwaWyjscia + "1 * " + nazwaWyjscia + "2;";
         if (nazwaZmiennej != null)
-            wynik += nazwaZmiennej + " = " + nazwaWyjscia + ";\n";
-        return wynik + "}";
+            wynik += "\n" + nazwaZmiennej + " = " + nazwaWyjscia + ";";
+        return wynik;
     }
     
     @Override

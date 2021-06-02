@@ -31,10 +31,10 @@ public class Negacja implements Instrukcja {
 
     @Override
     public String toJava(String nazwaWyjscia) {
-        String wynik = "{\n";
+        String wynik = "";
         wynik += argument.toJava(nazwaWyjscia) + "\n";
-        wynik += "if (" + nazwaWyjscia + " == 0)\n " + nazwaWyjscia + " = 1;\n else\n " + nazwaWyjscia + " = 0;\n";
-        return wynik + "}";
+        wynik += "if (" + nazwaWyjscia + " == 0)\n " + nazwaWyjscia + " = 1;\n else\n " + nazwaWyjscia + " = 0;";
+        return wynik;
     }
 
     @Override

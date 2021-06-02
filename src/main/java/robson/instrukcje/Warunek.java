@@ -49,7 +49,7 @@ public class Warunek implements Instrukcja {
 
     @Override
     public String toJava(String nazwaWyjscia) {
-        String wynik = "{\n";
+        String wynik = "";
         wynik += "double " + nazwaWyjscia + "w = 0, " + nazwaWyjscia + "p = 0, " + nazwaWyjscia + "f = 0;\n";
         wynik += warunek.toJava(nazwaWyjscia + "w");
         wynik += "if (" + nazwaWyjscia + "w != 0)\n";
@@ -57,10 +57,10 @@ public class Warunek implements Instrukcja {
         wynik += nazwaWyjscia + " = " + nazwaWyjscia + "p;\n}\n";
         if (!Objects.isNull(blok_falsz)) {
             wynik += "else{\n" + blok_falsz.toJava(nazwaWyjscia + "f") + "\n";
-            wynik += nazwaWyjscia + " = " + nazwaWyjscia + "f;\n}\n";
+            wynik += nazwaWyjscia + " = " + nazwaWyjscia + "f;\n}";
         } else
-            wynik += "else\n" + nazwaWyjscia + " = 0;\n";
-        return wynik + "}";
+            wynik += "else\n" + nazwaWyjscia + " = 0;";
+        return wynik;
     }
 
     @Override
