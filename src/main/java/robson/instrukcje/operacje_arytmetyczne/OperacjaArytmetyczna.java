@@ -3,13 +3,11 @@ package robson.instrukcje.operacje_arytmetyczne;
 import com.google.gson.JsonObject;
 import robson.Robson;
 import robson.instrukcje.Instrukcja;
-import robson.instrukcje.Zmienna;
 
 public abstract class OperacjaArytmetyczna implements Instrukcja {
     // pakietowe, żeby były widoczne tylko w innych operacjach
     Instrukcja argument1, argument2;
-    String nazwaZmiennej;
-    Robson robson;
+    private Robson robson;
     
     @Override
     public void robson(Robson robson) {
@@ -32,9 +30,5 @@ public abstract class OperacjaArytmetyczna implements Instrukcja {
         argument2.robson(robson);
         argument2.fromJson(arg2);
         
-        if (argument1 instanceof Zmienna) {
-            Zmienna zmienna = (Zmienna) argument1;
-            nazwaZmiennej = zmienna.nazwa();
-        }
     }
 }

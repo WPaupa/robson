@@ -16,7 +16,7 @@ public class Petla implements Instrukcja {
     
     @Override
     public String typ() {
-        return "Petla";
+        return "While";
     }
 
     @Override

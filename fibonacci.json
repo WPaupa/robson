@@ -4,14 +4,14 @@
         {
             "typ": "Przypisanie",
             "nazwa": "numer",
-            "wyrazenie": {
+            "wartosc": {
                 "typ": "Liczba",
                 "wartosc": 10
             }
         },
         {
-            "typ": "Warunek",
-            "wyrazenie": {
+            "typ": "If",
+            "warunek": {
                 "typ": "<=",
                 "argument1": {
                     "typ": "Zmienna",
@@ -37,7 +37,7 @@
                     {
                         "typ": "Przypisanie",
                         "nazwa": "x1",
-                        "wyrazenie": {
+                        "wartosc": {
                             "typ": "Liczba",
                             "wartosc": 1
                         }
@@ -45,7 +45,7 @@
                     {
                         "typ": "Przypisanie",
                         "nazwa": "x2",
-                        "wyrazenie": {
+                        "wartosc": {
                             "typ": "Liczba",
                             "wartosc": 1
                         }
@@ -53,13 +53,13 @@
                     {
                         "typ": "Przypisanie",
                         "nazwa": "index",
-                        "wyrazenie": {
+                        "wartosc": {
                             "typ": "Liczba",
                             "wartosc": 3
                         }
                     },
                     {
-                        "typ": "Petla",
+                        "typ": "While",
                         "warunek": {
                             "typ": "<=",
                             "argument1": {
@@ -77,39 +77,47 @@
                                 {
                                     "typ": "Przypisanie",
                                     "nazwa": "temp",
-                                    "wyrazenie": {
-                                        "typ": "Zmienna",
-                                        "nazwa": "x2"
-                                    }
-                                },
-                                {
-                                    "typ": "Plus",
-                                    "argument1": {
-                                        "typ": "Zmienna",
-                                        "nazwa": "x2"
-                                    },
-                                    "argument2": {
-                                        "typ": "Zmienna",
-                                        "nazwa": "x1"
+                                    "wartosc": {
+                                        "typ": "Plus",
+                                        "argument1": {
+                                            "typ": "Zmienna",
+                                            "nazwa": "x1"
+                                        },
+                                        "argument2": {
+                                            "typ": "Zmienna",
+                                            "nazwa": "x2"
+                                        }
                                     }
                                 },
                                 {
                                     "typ": "Przypisanie",
                                     "nazwa": "x1",
-                                    "wyrazenie": {
+                                    "wartosc": {
+                                        "typ": "Zmienna",
+                                        "nazwa": "x2"
+                                    }
+                                },
+                                {
+                                    "typ": "Przypisanie",
+                                    "nazwa": "x2",
+                                    "wartosc": {
                                         "typ": "Zmienna",
                                         "nazwa": "temp"
                                     }
                                 },
                                 {
-                                    "typ": "Plus",
-                                    "argument1": {
-                                        "typ": "Zmienna",
-                                        "nazwa": "index"
-                                    },
-                                    "argument2": {
-                                        "typ": "Liczba",
-                                        "wartosc": 1
+                                    "typ": "Przypisanie",
+                                    "nazwa": "index",
+                                    "wartosc": {
+                                        "typ": "Plus",
+                                        "argument1": {
+                                            "typ": "Zmienna",
+                                            "nazwa": "index"
+                                        },
+                                        "argument2": {
+                                            "typ": "Liczba",
+                                            "wartosc": 1
+                                        }
                                     }
                                 }
                             ]

@@ -19,14 +19,14 @@ public class Warunek implements Instrukcja {
     
     @Override
     public String typ() {
-        return "Warunek";
+        return "If";
     }
 
     @Override
     public void fromJson(JsonObject json) {
         assert(json.get("typ").getAsString().equals(this.typ()));
 
-        JsonObject war = json.get("wyrazenie").getAsJsonObject();
+        JsonObject war = json.get("warunek").getAsJsonObject();
         warunek = Instrukcja.nowaInstrukcja(war.get("typ").getAsString());
         assert warunek != null;
         warunek.robson(robson);

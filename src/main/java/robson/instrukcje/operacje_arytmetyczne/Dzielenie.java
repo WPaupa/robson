@@ -15,8 +15,6 @@ public class Dzielenie extends OperacjaArytmetyczna {
         wynik += argument1.toJava(nazwaWyjscia + "1") + "\n";
         wynik += argument2.toJava(nazwaWyjscia + "2") + "\n";
         wynik += nazwaWyjscia + " = " + nazwaWyjscia + "1 / " + nazwaWyjscia + "2;";
-        if (nazwaZmiennej != null)
-            wynik += "\n" + nazwaZmiennej + " = " + nazwaWyjscia + ";";
         return wynik;
     }
 
@@ -26,8 +24,6 @@ public class Dzielenie extends OperacjaArytmetyczna {
         double arg2 = argument2.wykonaj();
         if (arg2 == 0)
             throw new Robson.BladWykonania();
-        if (nazwaZmiennej != null)
-            robson.ustawianieZmiennej(nazwaZmiennej, arg1 / arg2);
         return arg1 / arg2;
     }
 }
