@@ -9,6 +9,17 @@ public abstract class OperacjaArytmetyczna implements Instrukcja {
     Instrukcja argument1, argument2;
     private Robson robson;
     
+    String nazwaArg1() {
+        if (robson.verbose())
+            return "_argument1";
+        return "1";
+    }
+    String nazwaArg2() {
+        if (robson.verbose())
+            return "_argument2";
+        return "2";
+    }
+    
     @Override
     public void robson(Robson robson) {
         this.robson = robson;

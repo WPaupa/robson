@@ -11,10 +11,10 @@ public class Razy extends OperacjaArytmetyczna {
     @Override
     public String toJava(String nazwaWyjscia) {
         String wynik = "";
-        wynik += "double " + nazwaWyjscia + "1 = 0, " + nazwaWyjscia + "2 = 0;\n";
-        wynik += argument1.toJava(nazwaWyjscia + "1") + "\n";
-        wynik += argument2.toJava(nazwaWyjscia + "2") + "\n";
-        wynik += nazwaWyjscia + " = " + nazwaWyjscia + "1 * " + nazwaWyjscia + "2;";
+        wynik += "double " + nazwaWyjscia + nazwaArg1() +" = 0, " + nazwaWyjscia + nazwaArg2() + " = 0;\n";
+        wynik += argument1.toJava(nazwaWyjscia + nazwaArg1()) + "\n";
+        wynik += argument2.toJava(nazwaWyjscia + nazwaArg2()) + "\n";
+        wynik += nazwaWyjscia + " = " + nazwaWyjscia + nazwaArg1() + " * " + nazwaWyjscia + nazwaArg2() + ";";
         return wynik;
     }
     

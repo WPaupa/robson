@@ -19,6 +19,10 @@ public class Robson {
     private Hashtable<String, Double> zmienne;
     private String json;
     
+    public boolean verbose() {
+        return false;
+    }
+    
     public void ustawianieZmiennej(String nazwa, double wartosc) {
         zmienne.put(nazwa, wartosc);
     }

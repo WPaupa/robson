@@ -38,17 +38,35 @@ public class Petla implements Instrukcja {
         warunek.fromJson(war);
         blok.fromJson(blo);
     }
+    
+    private String nazwaWarunkuZewn() {
+        if (robson.verbose())
+            return "_warunekPetli";
+        return "w";
+    }
+    
+    private String nazwaWarunkuWewn() {
+        if (robson.verbose())
+            return "_tymczasowyWarunekPetli";
+        return "d";
+    }
+    
+    private String nazwaBloku() {
+        if (robson.verbose())
+            return "_blokPetli";
+        return "b";
+    }
 
     @Override
     public String toJava(String nazwaWyjscia) {
         String wynik = "";
-        wynik += "double " + nazwaWyjscia + "w = 0, " + nazwaWyjscia + "d = 0;\n";
-        wynik += warunek.toJava(nazwaWyjscia + "w");
-        wynik += "while (" + nazwaWyjscia + "w != 0)\n{\n";
-        wynik += "double " + nazwaWyjscia + "b = 0;\n";
-        wynik += blok.toJava(nazwaWyjscia + "b") + "\n";
-        wynik += warunek.toJava(nazwaWyjscia + "d") + "\n";
-        wynik += nazwaWyjscia + "w = " + nazwaWyjscia + "d;\n";
+        wynik += "double " + nazwaWyjscia + nazwaWarunkuZewn() + " = 0, " + nazwaWyjscia + nazwaWarunkuWewn() +" = 0;\n";
+        wynik += warunek.toJava(nazwaWyjscia + nazwaWarunkuZewn());
+        wynik += "while (" + nazwaWyjscia + nazwaWarunkuZewn() + " != 0)\n{\n";
+        wynik += "double " + nazwaWyjscia + nazwaBloku() + " = 0;\n";
+        wynik += blok.toJava(nazwaWyjscia + nazwaBloku()) + "\n";
+        wynik += warunek.toJava(nazwaWyjscia + nazwaWarunkuWewn()) + "\n";
+        wynik += nazwaWyjscia + nazwaWarunkuZewn() + " = " + nazwaWyjscia + nazwaWarunkuWewn() + ";\n";
         wynik += "}\n " + nazwaWyjscia + " = 0;";
         return wynik;
     }

@@ -46,18 +46,37 @@ public class Warunek implements Instrukcja {
             blok_falsz.fromJson(falsz);
         } 
     }
+    
+    private String nazwaWarunku() {
+        if (robson.verbose())
+            return "_warunek";
+        return "w";
+    }
+    
+    private String nazwaPrawdy() {
+        if (robson.verbose())
+            return "_wartoscBlokuPrawda";
+        return "p";
+    }
+    
+    private String nazwaFalszu() {
+        if (robson.verbose())
+            return "_wartoscBlokuFalsz";
+        return "f";
+    }
 
     @Override
     public String toJava(String nazwaWyjscia) {
         String wynik = "";
-        wynik += "double " + nazwaWyjscia + "w = 0, " + nazwaWyjscia + "p = 0, " + nazwaWyjscia + "f = 0;\n";
-        wynik += warunek.toJava(nazwaWyjscia + "w");
-        wynik += "if (" + nazwaWyjscia + "w != 0)\n";
-        wynik += "{\n" + blok_prawda.toJava(nazwaWyjscia + "p") + "\n";
-        wynik += nazwaWyjscia + " = " + nazwaWyjscia + "p;\n}\n";
+        wynik += "double " + nazwaWyjscia + nazwaWarunku() + " = 0, " + 
+                nazwaWyjscia + nazwaPrawdy() + " = 0, " + nazwaWyjscia + nazwaFalszu() + " = 0;\n";
+        wynik += warunek.toJava(nazwaWyjscia + nazwaWarunku());
+        wynik += "if (" + nazwaWyjscia + nazwaWarunku() + " != 0)\n";
+        wynik += "{\n" + blok_prawda.toJava(nazwaWyjscia + nazwaPrawdy()) + "\n";
+        wynik += nazwaWyjscia + " = " + nazwaWyjscia + nazwaPrawdy() + ";\n}\n";
         if (!Objects.isNull(blok_falsz)) {
-            wynik += "else{\n" + blok_falsz.toJava(nazwaWyjscia + "f") + "\n";
-            wynik += nazwaWyjscia + " = " + nazwaWyjscia + "f;\n}";
+            wynik += "else{\n" + blok_falsz.toJava(nazwaWyjscia + nazwaFalszu()) + "\n";
+            wynik += nazwaWyjscia + " = " + nazwaWyjscia + nazwaFalszu() + ";\n}";
         } else
             wynik += "else\n" + nazwaWyjscia + " = 0;";
         return wynik;

@@ -31,13 +31,19 @@ public class Przypisanie implements Instrukcja {
         
         nazwa = json.get("nazwa").getAsString();
     }
+    
+    private String nazwaWartosci() {
+        if (robson.verbose())
+            return "_wartoscDoPrzypisania";
+        return "w";
+    }
 
     @Override
     public String toJava(String nazwaWyjscia) {
         String wynik = "";
-        wynik += "double " + nazwaWyjscia + "w = 0;\n";
-        wynik += wartosc.toJava(nazwaWyjscia + "w") + "\n";
-        wynik += nazwaWyjscia + " = " + nazwa + " = " + nazwaWyjscia + "w;";
+        wynik += "double " + nazwaWyjscia + nazwaWartosci() + " = 0;\n";
+        wynik += wartosc.toJava(nazwaWyjscia + nazwaWartosci()) + "\n";
+        wynik += nazwaWyjscia + " = " + nazwa + " = " + nazwaWyjscia + nazwaWartosci() + ";";
         return wynik;
     }
 
