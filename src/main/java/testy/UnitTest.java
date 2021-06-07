@@ -48,4 +48,17 @@ public class UnitTest extends TestCase {
         JsonObject j = gson.fromJson("{\"json\":\"son\"}", JsonObject.class);
         System.out.println(j.get("json").getAsString());
     }
+    
+    public void testujForum() {
+        try {
+            Robson robson = new Robson();
+            robson.fromJson("forum.json");
+            robson.toJson(null);
+            System.out.println(robson.wykonaj());
+            robson.toJava(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            assert false;
+        }
+    }
 }

@@ -21,7 +21,7 @@ public class Blok implements Instrukcja {
 
     @Override
     public String toJava(String nazwaWyjscia) {
-        if (instrukcje.length == 0)
+        if (instrukcje == null || instrukcje.length == 0)
             return nazwaWyjscia + " = 0;";
         StringBuilder wynik = new StringBuilder();
         for (int i = 0; i < instrukcje.length; i++) {
@@ -51,6 +51,7 @@ public class Blok implements Instrukcja {
     @Override
     public double wykonaj() throws Robson.BladWykonania {
         double wynik = 0;
+        if (instrukcje != null)
         for (Instrukcja instrukcja : instrukcje) 
             wynik = instrukcja.wykonaj();
         return wynik;
