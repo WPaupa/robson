@@ -71,6 +71,18 @@ public class Robson {
             e.printStackTrace();
         }
     }
+    
+    private String zmiennaPomocnicza() {
+        String wynik = "$";
+        for (String x : nazwyZmiennych) {
+            int temp = 1 + (int) x.chars().filter(ch -> ch == '$').count();
+            if (temp > wynik.length())
+                wynik = "$".repeat(temp);
+        }
+        if (verbose)
+            return wynik + "zmienna_pomocnicza";
+        return wynik;
+    }
 
     public void toJava(String filename) {
         StringBuilder wynik = new StringBuilder("public class Main\n{\npublic static void main(String[] args)\n{\n");
@@ -78,9 +90,9 @@ public class Robson {
         for (String x : nazwyZmiennych) {
             wynik.append("double ").append(x).append(" = 0;\n");
         }
-        wynik.append("double $ = 0;\n");
-        wynik.append(program.toJava("$")).append("\n");
-        wynik.append("System.out.println($);\n}\n}");
+        wynik.append("double ").append(zmiennaPomocnicza()).append(" = 0;\n");
+        wynik.append(program.toJava(zmiennaPomocnicza())).append("\n");
+        wynik.append("System.out.println(").append(zmiennaPomocnicza()).append(");\n}\n}");
 
         String formatowany = wynik.toString();
         try {
