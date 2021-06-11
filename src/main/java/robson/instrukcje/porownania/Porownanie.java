@@ -8,12 +8,12 @@ public abstract class Porownanie implements Instrukcja {
     // pakietowe, żeby były widoczne tylko w innych porownaniach
     Instrukcja argument1, argument2;
 
-    String nazwaArg1() {
+    private String nazwaArg1() {
         if (robson.verbose())
             return "_argument1";
         return "1";
     }
-    String nazwaArg2() {
+    private String nazwaArg2() {
         if (robson.verbose())
             return "_argument2";
         return "2";
@@ -42,4 +42,18 @@ public abstract class Porownanie implements Instrukcja {
         argument2.robson(robson);
         argument2.fromJson(arg2);
     }
+    
+    @Override
+    public String toJava(String nazwaWyjscia) {
+        String wynik = "";
+        wynik += "double " + nazwaWyjscia + nazwaArg1() + " = 0, " + nazwaWyjscia + nazwaArg2() +" = 0;\n";
+        wynik += argument1.toJava(nazwaWyjscia + nazwaArg1()) + "\n";
+        wynik += argument2.toJava(nazwaWyjscia + nazwaArg2()) + "\n";
+        wynik += "if (" + nazwaWyjscia + nazwaArg1() + " " + symbolOperacji() + " " + nazwaWyjscia + nazwaArg2() + ")\n "
+                + nazwaWyjscia + " = 1;\n else\n " + nazwaWyjscia + " = 0;";
+        return wynik;
+    }
+    
+    // pakietowe, bo użyte tylko porównaniach
+    abstract String symbolOperacji();
 }

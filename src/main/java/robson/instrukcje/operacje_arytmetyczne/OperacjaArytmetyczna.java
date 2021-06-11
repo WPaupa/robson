@@ -7,20 +7,21 @@ import robson.instrukcje.Instrukcja;
 public abstract class OperacjaArytmetyczna implements Instrukcja {
     // pakietowe, żeby były widoczne tylko w innych operacjach
     Instrukcja argument1, argument2;
-    
-    String nazwaArg1() {
+
+    private String nazwaArg1() {
         if (robson.verbose())
             return "_argument1";
         return "1";
     }
-    String nazwaArg2() {
+
+    private String nazwaArg2() {
         if (robson.verbose())
             return "_argument2";
         return "2";
     }
 
     private transient Robson robson;
-    
+
     @Override
     public void robson(Robson robson) {
         this.robson = robson;
@@ -28,7 +29,7 @@ public abstract class OperacjaArytmetyczna implements Instrukcja {
 
     @Override
     public void fromJson(JsonObject json) {
-        assert(json.get("typ").getAsString().equals(this.typ()));
+        assert (json.get("typ").getAsString().equals(this.typ()));
 
         JsonObject arg1 = json.get("argument1").getAsJsonObject();
         argument1 = Instrukcja.nowaInstrukcja(arg1.get("typ").getAsString());
@@ -41,6 +42,19 @@ public abstract class OperacjaArytmetyczna implements Instrukcja {
         assert argument2 != null;
         argument2.robson(robson);
         argument2.fromJson(arg2);
-        
+
     }
+
+    @Override
+    public String toJava(String nazwaWyjscia) {
+        String wynik = "";
+        wynik += "double " + nazwaWyjscia + nazwaArg1() + " = 0, " + nazwaWyjscia + nazwaArg2() + " = 0;\n";
+        wynik += argument1.toJava(nazwaWyjscia + nazwaArg1()) + "\n";
+        wynik += argument2.toJava(nazwaWyjscia + nazwaArg2()) + "\n";
+        wynik += nazwaWyjscia + " = " + nazwaWyjscia + nazwaArg1() + " " + symbolOperacji() + " " + nazwaWyjscia + nazwaArg2() + ";";
+        return wynik;
+    }
+    
+    // pakietowe, żeby było tylko w klasach operacji
+    abstract String symbolOperacji();
 }
