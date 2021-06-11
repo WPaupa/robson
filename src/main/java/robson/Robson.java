@@ -28,7 +28,7 @@ public class Robson {
     }
     
     public double wartoscZmiennej(String nazwa) {
-        if (!zmienne.contains(nazwa))
+        if (!zmienne.containsKey(nazwa))
             zmienne.put(nazwa, 0.);
         return zmienne.get(nazwa);
     }
