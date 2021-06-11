@@ -10,7 +10,7 @@ public class Warunek implements Instrukcja {
     private Instrukcja warunek;
     private Instrukcja blok_prawda;
     private Instrukcja blok_falsz;
-    private Robson robson;
+    private transient Robson robson;
 
     @Override
     public void robson(Robson robson) {

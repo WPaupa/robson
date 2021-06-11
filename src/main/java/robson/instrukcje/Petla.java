@@ -7,7 +7,7 @@ public class Petla implements Instrukcja {
     
     private Instrukcja warunek;
     private Instrukcja blok;
-    private Robson robson;
+    private transient Robson robson;
 
     @Override
     public void robson(Robson robson) {

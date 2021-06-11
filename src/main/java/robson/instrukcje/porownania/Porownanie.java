@@ -7,7 +7,6 @@ import robson.instrukcje.Instrukcja;
 public abstract class Porownanie implements Instrukcja {
     // pakietowe, żeby były widoczne tylko w innych porownaniach
     Instrukcja argument1, argument2;
-    private Robson robson;
 
     String nazwaArg1() {
         if (robson.verbose())
@@ -19,6 +18,8 @@ public abstract class Porownanie implements Instrukcja {
             return "_argument2";
         return "2";
     }
+
+    private transient Robson robson;
     
     @Override
     public void robson(Robson robson) {

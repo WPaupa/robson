@@ -17,10 +17,10 @@ public class Robson {
     public static class BladWykonania extends Exception {}
     private Instrukcja program;
     private Hashtable<String, Double> zmienne;
-    private String json;
     
+    private boolean verbose;
     public boolean verbose() {
-        return false;
+        return verbose;
     }
     
     public void ustawianieZmiennej(String nazwa, double wartosc) {
@@ -36,7 +36,7 @@ public class Robson {
     public void fromJson(String filename) throws NieprawidlowyProgram {
         Gson gson = new Gson();
         try {
-            json = Files.readString(Path.of(filename));
+            String json = Files.readString(Path.of(filename));
             JsonObject j = gson.fromJson(json, JsonObject.class);
             program = Instrukcja.nowaInstrukcja(j.get("typ").getAsString());
             assert program != null;
@@ -50,6 +50,7 @@ public class Robson {
     }
 
     public void toJson(String filename) {
+        String json = new Gson().toJson(program);
         if (Objects.isNull(filename))
             System.out.println(json);
         else try {
@@ -95,5 +96,12 @@ public class Robson {
         double wynik = program.wykonaj();
         this.zmienne = new Hashtable<>();
         return wynik;
+    }
+    
+    public Robson() {
+        this.verbose = false;
+    }
+    public Robson(boolean verbose) {
+        this.verbose = verbose;
     }
 }

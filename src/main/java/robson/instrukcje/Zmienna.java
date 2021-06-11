@@ -9,7 +9,7 @@ public class Zmienna implements Instrukcja {
     public String nazwa() {
         return nazwa;
     }
-    private Robson robson;
+    private transient Robson robson;
     @Override
     public void robson(Robson robson) {
         this.robson = robson;

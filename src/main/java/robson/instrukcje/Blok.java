@@ -7,7 +7,7 @@ import robson.Robson;
 
 public class Blok implements Instrukcja {
     private Instrukcja[] instrukcje;
-    private Robson robson;
+    private transient Robson robson;
 
     @Override
     public void robson(Robson robson) {

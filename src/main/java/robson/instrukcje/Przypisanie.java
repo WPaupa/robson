@@ -7,7 +7,7 @@ public class Przypisanie implements Instrukcja {
     
     private String nazwa;
     private Instrukcja wartosc;
-    private Robson robson;
+    private transient Robson robson;
 
     @Override
     public void robson(Robson robson) {

@@ -6,7 +6,7 @@ import robson.Robson;
 public class Negacja implements Instrukcja {
     
     private Instrukcja argument;
-    private Robson robson;
+    private transient Robson robson;
 
     @Override
     public void robson(Robson robson) {
