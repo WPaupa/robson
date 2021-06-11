@@ -3,9 +3,10 @@ package robson.instrukcje.operacje_logiczne;
 import robson.Robson;
 
 public class Oraz extends OperacjaLogiczna {
+    private static final String typ = "And";
     @Override
     public String typ() {
-        return "And";
+        return typ;
     }
 
     @Override

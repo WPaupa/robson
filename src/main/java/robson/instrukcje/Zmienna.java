@@ -14,10 +14,16 @@ public class Zmienna implements Instrukcja {
     public void robson(Robson robson) {
         this.robson = robson;
     }
-    
+
+    @Override
+    public void dodajZmienne() {
+        robson.dodanieZmiennej(nazwa);
+    }
+
+    private static final String typ = "Zmienna";
     @Override
     public String typ() {
-        return "Zmienna";
+        return typ;
     }
 
     @Override

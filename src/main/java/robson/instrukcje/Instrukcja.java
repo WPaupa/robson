@@ -14,6 +14,7 @@ public interface Instrukcja {
     String toJava(String nazwaWyjscia);
     double wykonaj() throws Robson.BladWykonania;
     void robson(Robson robson);
+    void dodajZmienne();
 
     // funkcja wygenerowana automatycznie
     static Instrukcja nowaInstrukcja(String nazwa) {

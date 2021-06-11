@@ -13,10 +13,17 @@ public class Petla implements Instrukcja {
     public void robson(Robson robson) {
         this.robson = robson;
     }
-    
+
+    @Override
+    public void dodajZmienne() {
+        warunek.dodajZmienne();
+        blok.dodajZmienne();
+    }
+
+    private static final String typ = "While";
     @Override
     public String typ() {
-        return "While";
+        return typ;
     }
 
     @Override

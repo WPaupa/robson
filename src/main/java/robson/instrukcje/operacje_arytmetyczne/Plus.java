@@ -3,9 +3,10 @@ package robson.instrukcje.operacje_arytmetyczne;
 import robson.Robson;
 
 public class Plus extends OperacjaArytmetyczna {
+    private static final String typ = "Plus";
     @Override
     public String typ() {
-        return "Plus";
+        return typ;
     }
     
 

@@ -16,10 +16,18 @@ public class Warunek implements Instrukcja {
     public void robson(Robson robson) {
         this.robson = robson;
     }
-    
+
+    @Override
+    public void dodajZmienne() {
+        warunek.dodajZmienne();
+        blok_prawda.dodajZmienne();
+        blok_falsz.dodajZmienne();
+    }
+
+    private static final String typ = "If";
     @Override
     public String typ() {
-        return "If";
+        return typ;
     }
 
     @Override

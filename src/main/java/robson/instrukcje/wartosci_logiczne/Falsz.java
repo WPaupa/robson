@@ -3,9 +3,10 @@ package robson.instrukcje.wartosci_logiczne;
 import robson.Robson;
 
 public class Falsz extends WartoscLogiczna {
+    private static final String typ = "False";
     @Override
     public String typ() {
-        return "False";
+        return typ;
     }
 
     @Override

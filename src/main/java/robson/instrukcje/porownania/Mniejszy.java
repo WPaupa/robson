@@ -3,9 +3,10 @@ package robson.instrukcje.porownania;
 import robson.Robson;
 
 public class Mniejszy extends Porownanie {
+    private static final String typ = "<";
     @Override
     public String typ() {
-        return "<";
+        return typ;
     }
     
     @Override

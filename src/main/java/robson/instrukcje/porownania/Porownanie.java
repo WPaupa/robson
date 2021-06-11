@@ -25,6 +25,12 @@ public abstract class Porownanie implements Instrukcja {
     public void robson(Robson robson) {
         this.robson = robson;
     }
+
+    @Override
+    public void dodajZmienne() {
+        argument1.dodajZmienne();
+        argument2.dodajZmienne();
+    }
     
     @Override
     public void fromJson(JsonObject json) {

@@ -13,4 +13,8 @@ public abstract class WartoscLogiczna implements Instrukcja {
     @Override
     public void fromJson(JsonObject json) {
     }
+    
+    @Override
+    public void dodajZmienne() {
+    }
 }

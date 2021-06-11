@@ -28,6 +28,12 @@ public abstract class OperacjaLogiczna implements Instrukcja {
     }
 
     @Override
+    public void dodajZmienne() {
+        argument1.dodajZmienne();
+        argument2.dodajZmienne();
+    }
+
+    @Override
     public void fromJson(JsonObject json) {
         assert (json.get("typ").getAsString().equals(this.typ()));
 

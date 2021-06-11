@@ -13,10 +13,17 @@ public class Przypisanie implements Instrukcja {
     public void robson(Robson robson) {
         this.robson = robson;
     }
-    
+
+    @Override
+    public void dodajZmienne() {
+        robson.dodanieZmiennej(nazwa);
+        wartosc.dodajZmienne();
+    }
+
+    private static final String typ = "Przypisanie";
     @Override
     public String typ() {
-        return "Przypisanie";
+        return typ;
     }
 
     @Override

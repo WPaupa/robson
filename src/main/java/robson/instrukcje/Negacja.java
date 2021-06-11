@@ -12,10 +12,16 @@ public class Negacja implements Instrukcja {
     public void robson(Robson robson) {
         this.robson = robson;
     }
-    
+
+    @Override
+    public void dodajZmienne() {
+        argument.dodajZmienne();
+    }
+
+    private static final String typ = "Not";
     @Override
     public String typ() {
-        return "Not";
+        return typ;
     }
 
     @Override

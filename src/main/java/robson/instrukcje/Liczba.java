@@ -12,8 +12,13 @@ public class Liczba implements Instrukcja {
     }
 
     @Override
+    public void dodajZmienne() {
+    }
+
+    private static final String typ = "Liczba";
+    @Override
     public String typ() {
-        return "Liczba";
+        return typ;
     }
 
     @Override

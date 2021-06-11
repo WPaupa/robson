@@ -3,13 +3,16 @@ package robson;
 import com.google.googlejavaformat.java.Formatter;
 import com.google.googlejavaformat.java.FormatterException;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import robson.instrukcje.Instrukcja;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Objects;
+import java.util.Set;
 
 
 public class Robson {
@@ -17,10 +20,15 @@ public class Robson {
     public static class BladWykonania extends Exception {}
     private Instrukcja program;
     private Hashtable<String, Double> zmienne;
+    private Set<String> nazwyZmiennych;
     
     private boolean verbose;
     public boolean verbose() {
         return verbose;
+    }
+    
+    public void dodanieZmiennej(String nazwa) {
+        nazwyZmiennych.add(nazwa);
     }
     
     public void ustawianieZmiennej(String nazwa, double wartosc) {
@@ -50,7 +58,11 @@ public class Robson {
     }
 
     public void toJson(String filename) {
-        String json = new Gson().toJson(program);
+        GsonBuilder g = new GsonBuilder();
+        // żeby wypisywało też typ, który jest klasowy
+        g.excludeFieldsWithModifiers(java.lang.reflect.Modifier.TRANSIENT);
+        Gson gson = g.setPrettyPrinting().create();
+        String json = gson.toJson(program);
         if (Objects.isNull(filename))
             System.out.println(json);
         else try {
@@ -62,17 +74,13 @@ public class Robson {
 
     public void toJava(String filename) {
         StringBuilder wynik = new StringBuilder("public class Main\n{\npublic static void main(String[] args)\n{\n");
-        try {
-            program.wykonaj();
-            for (String k : zmienne.keySet()) {
-                wynik.append("double ").append(k).append(" = 0;\n");
-            }
-            zmienne = new Hashtable<>();
-        } catch (Exception ignored) {
+        program.dodajZmienne();
+        for (String x : nazwyZmiennych) {
+            wynik.append("double ").append(x).append(" = 0;\n");
         }
-        wynik.append("double a = 0;\n");
-        wynik.append(program.toJava("a")).append("\n");
-        wynik.append("System.out.println(a);\n}\n}");
+        wynik.append("double $ = 0;\n");
+        wynik.append(program.toJava("$")).append("\n");
+        wynik.append("System.out.println($);\n}\n}");
 
         String formatowany = wynik.toString();
         try {
@@ -93,15 +101,18 @@ public class Robson {
     }
 
     public double wykonaj() throws BladWykonania {
-        double wynik = program.wykonaj();
         this.zmienne = new Hashtable<>();
+        double wynik = program.wykonaj();
+        this.zmienne = null;
         return wynik;
     }
     
     public Robson() {
+        this.nazwyZmiennych = new HashSet<>();
         this.verbose = false;
     }
     public Robson(boolean verbose) {
+        this.nazwyZmiennych = new HashSet<>();
         this.verbose = verbose;
     }
 }

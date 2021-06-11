@@ -3,9 +3,10 @@ package robson.instrukcje.operacje_logiczne;
 import robson.Robson;
 
 public class Lub extends OperacjaLogiczna {
+    private static final String typ = "Or";
     @Override
     public String typ() {
-        return "Or";
+        return typ;
     }
     
     @Override

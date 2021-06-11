@@ -8,15 +8,24 @@ import robson.Robson;
 public class Blok implements Instrukcja {
     private Instrukcja[] instrukcje;
     private transient Robson robson;
-
+    
     @Override
     public void robson(Robson robson) {
         this.robson = robson;
     }
 
     @Override
+    public void dodajZmienne() {
+        if (instrukcje != null)
+            for (Instrukcja i : instrukcje) {
+                i.dodajZmienne();
+            }
+    }
+
+    private static final String typ = "Blok";
+    @Override
     public String typ() {
-        return "Blok";
+        return typ;
     }
 
     private String nazwaInstrukcji(int i) {

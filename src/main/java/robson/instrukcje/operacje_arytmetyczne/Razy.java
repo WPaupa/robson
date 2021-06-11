@@ -3,9 +3,10 @@ package robson.instrukcje.operacje_arytmetyczne;
 import robson.Robson;
 
 public class Razy extends OperacjaArytmetyczna {
+    private static final String typ = "Razy";
     @Override
     public String typ() {
-        return "Razy";
+        return typ;
     }
     
     @Override
