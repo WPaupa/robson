@@ -1,3 +1,145 @@
 {
-    
+    "typ": "Blok",
+    "instrukcje": [
+        {
+            "typ": "Przypisanie",
+            "nazwa": "a",
+            "wartosc": {
+                "typ": "Liczba",
+                "wartosc": 89
+            }
+        },
+        {
+            "typ": "Przypisanie",
+            "nazwa": "b",
+            "wartosc": {
+                "typ": "Liczba",
+                "wartosc": 55
+            }
+        },
+        {
+            "typ": "If",
+            "warunek": {
+                "typ": "<",
+                "argument1": {
+                    "typ": "Zmienna",
+                    "nazwa": "a"
+                },
+                "argument2": {
+                    "typ": "Zmienna",
+                    "nazwa": "b"
+                }
+            },
+            "blok_prawda": {
+                "typ": "Blok",
+                "instrukcje": [
+                    {
+                        "typ": "Przypisanie",
+                        "nazwa": "tmp",
+                        "wartosc": {
+                            "typ": "Zmienna",
+                            "nazwa": "a"
+                        }
+                    },
+                    {
+                        "typ": "Przypisanie",
+                        "nazwa": "a",
+                        "wartosc": {
+                            "typ": "Zmienna",
+                            "nazwa": "b"
+                        }
+                    },
+                    {
+                        "typ": "Przypisanie",
+                        "nazwa": "b",
+                        "wartosc": {
+                            "typ": "Zmienna",
+                            "nazwa": "tmp"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "typ": "While",
+            "warunek": {
+                "typ": ">",
+                "argument1": {
+                    "typ": "Zmienna",
+                    "nazwa": "b"
+                },
+                "argument2": {
+                    "typ": "Liczba",
+                    "wartosc": 0
+                }
+            },
+            "blok": {
+                "typ": "Blok",
+                "instrukcje": [
+                    {
+                        "typ": "Przypisanie",
+                        "nazwa": "a",
+                        "wartosc": {
+                            "typ": "Minus",
+                            "argument1": {
+                                "typ": "Zmienna",
+                                "nazwa": "a"
+                            },
+                            "argument2": {
+                                "typ": "Zmienna",
+                                "nazwa": "b"
+                            }
+                        }
+                    },
+                    {
+                        "typ": "If",
+                        "warunek": {
+                            "typ": "<",
+                            "argument1": {
+                                "typ": "Zmienna",
+                                "nazwa": "a"
+                            },
+                            "argument2": {
+                                "typ": "Zmienna",
+                                "nazwa": "b"
+                            }
+                        },
+                        "blok_prawda": {
+                            "typ": "Blok",
+                            "instrukcje": [
+                                {
+                                    "typ": "Przypisanie",
+                                    "nazwa": "tmp",
+                                    "wartosc": {
+                                        "typ": "Zmienna",
+                                        "nazwa": "a"
+                                    }
+                                },
+                                {
+                                    "typ": "Przypisanie",
+                                    "nazwa": "a",
+                                    "wartosc": {
+                                        "typ": "Zmienna",
+                                        "nazwa": "b"
+                                    }
+                                },
+                                {
+                                    "typ": "Przypisanie",
+                                    "nazwa": "b",
+                                    "wartosc": {
+                                        "typ": "Zmienna",
+                                        "nazwa": "tmp"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "typ": "Zmienna",
+            "nazwa": "a"
+        }
+    ]
 }

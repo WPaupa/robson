@@ -8,7 +8,7 @@ import robson.instrukcje.Instrukcja;
 
 import java.util.Objects;
 
-public class UnitTest extends TestCase {
+public class TestyJednostkowe extends TestCase {
     public void testujPrzyklad() {
         try {
             Robson robson = new Robson();
@@ -33,21 +33,6 @@ public class UnitTest extends TestCase {
             assert false;
         }
     }
-
-    public void testujInstrukcje() {
-        try {
-            System.out.println(Objects.requireNonNull(Instrukcja.nowaInstrukcja("Blok")).typ());
-        } catch (Exception e) {
-            e.printStackTrace();
-            assert false;
-        }
-    }
-    
-    public void testujJson() {
-        Gson gson = new Gson();
-        JsonObject j = gson.fromJson("{\"json\":\"son\"}", JsonObject.class);
-        System.out.println(j.get("json").getAsString());
-    }
     
     public void testujForum() {
         try {
@@ -56,6 +41,28 @@ public class UnitTest extends TestCase {
             robson.toJson(null);
             System.out.println(robson.wykonaj());
             robson.toJava(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            assert false;
+        }
+    }
+    
+    public void testujEuklides() {
+        try {
+            Robson robson = new Robson();
+            robson.fromJson("euklides.json");
+            robson.toJson(null);
+            System.out.println(robson.wykonaj());
+            robson.toJava(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            assert false;
+        }
+    }
+
+    public void testujInstrukcje() {
+        try {
+            System.out.println(Objects.requireNonNull(Instrukcja.nowaInstrukcja("Blok")).typ());
         } catch (Exception e) {
             e.printStackTrace();
             assert false;

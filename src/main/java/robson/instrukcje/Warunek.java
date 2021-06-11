@@ -21,7 +21,8 @@ public class Warunek implements Instrukcja {
     public void dodajZmienne() {
         warunek.dodajZmienne();
         blok_prawda.dodajZmienne();
-        blok_falsz.dodajZmienne();
+        if (blok_falsz != null)
+            blok_falsz.dodajZmienne();
     }
 
     private static final String typ = "If";
