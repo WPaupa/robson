@@ -54,7 +54,9 @@ public class Robson {
             throw new NieprawidlowyProgram();
         } 
     }
-
+    
+    // w funkcjach toJson i toJava, program ma opcję wypisania na standardowe wyjście,
+    // robi to wtedy, gdy filename jest nullem
     public void toJson(String filename) {
         assert program != null;
         GsonBuilder g = new GsonBuilder();

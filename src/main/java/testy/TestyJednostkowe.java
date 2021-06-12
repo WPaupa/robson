@@ -26,6 +26,7 @@ public class TestyJednostkowe extends TestCase {
             robson.fromJson("fibonacci.json");
             System.out.println(robson.wykonaj());
             robson.toJava(null);
+            robson.toJson(null);
         } catch (Exception e) {
             e.printStackTrace();
             assert false;

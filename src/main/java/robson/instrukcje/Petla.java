@@ -81,9 +81,7 @@ public class Petla implements Instrukcja {
     @Override
     public double wykonaj() throws Robson.BladWykonania {
         double war = warunek.wykonaj();
-        if (war != 0 && war != 1)
-            throw new Robson.BladWykonania();
-        while (war == 1) {
+        while (war != 0) {
             blok.wykonaj();
             war = warunek.wykonaj();
             if (war != 0 && war != 1)

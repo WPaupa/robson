@@ -94,9 +94,7 @@ public class Warunek implements Instrukcja {
     @Override
     public double wykonaj() throws Robson.BladWykonania {
         double war = warunek.wykonaj();
-        if (war != 0 && war != 1)
-            throw new Robson.BladWykonania();
-        if (war == 1)
+        if (war != 0)
             return blok_prawda.wykonaj();
         if (!Objects.isNull(blok_falsz))
             return blok_falsz.wykonaj();

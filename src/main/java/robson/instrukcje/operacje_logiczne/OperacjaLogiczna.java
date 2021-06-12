@@ -56,7 +56,7 @@ public abstract class OperacjaLogiczna implements Instrukcja {
         wynik += "double " + nazwaWyjscia + nazwaArg1() + " = 0, " + nazwaWyjscia + nazwaArg2() + " = 0;\n";
         wynik += argument1.toJava(nazwaWyjscia + nazwaArg1()) + "\n";
         wynik += argument2.toJava(nazwaWyjscia + nazwaArg2()) + "\n";
-        wynik += "if (" + nazwaWyjscia + nazwaArg1() + "== 1 " + symbolOperacji() + " " + nazwaWyjscia + nazwaArg2() + " == 1)\n "
+        wynik += "if (" + nazwaWyjscia + nazwaArg1() + "!= 0 " + symbolOperacji() + " " + nazwaWyjscia + nazwaArg2() + " != 0)\n "
                 + nazwaWyjscia + " = 1;\n else\n " + nazwaWyjscia + " = 0;";
         return wynik;
     }
