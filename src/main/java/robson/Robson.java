@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import robson.instrukcje.Instrukcja;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashSet;
@@ -36,9 +37,7 @@ public class Robson {
     }
     
     public double wartoscZmiennej(String nazwa) {
-        if (!zmienne.containsKey(nazwa))
-            zmienne.put(nazwa, 0.);
-        return zmienne.get(nazwa);
+        return zmienne.getOrDefault(nazwa,0.);
     }
     
     public void fromJson(String filename) throws NieprawidlowyProgram {
@@ -50,14 +49,14 @@ public class Robson {
             assert program != null;
             program.robson(this);
             program.fromJson(j);
-            zmienne = new Hashtable<>();
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
             throw new NieprawidlowyProgram();
         } 
     }
 
     public void toJson(String filename) {
+        assert program != null;
         GsonBuilder g = new GsonBuilder();
         // żeby wypisywało też typ, który jest klasowy
         g.excludeFieldsWithModifiers(java.lang.reflect.Modifier.TRANSIENT);
@@ -67,7 +66,7 @@ public class Robson {
             System.out.println(json);
         else try {
             Files.writeString(Path.of(filename), json);
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -85,6 +84,7 @@ public class Robson {
     }
 
     public void toJava(String filename) {
+        assert program != null;
         StringBuilder wynik = new StringBuilder("public class Main\n{\npublic static void main(String[] args)\n{\n");
         program.dodajZmienne();
         for (String x : nazwyZmiennych) {
@@ -106,7 +106,7 @@ public class Robson {
         else {
             try {
                 Files.writeString(Path.of(filename), formatowany);
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
