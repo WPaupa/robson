@@ -8,15 +8,30 @@ import robson.instrukcje.porownania.*;
 import robson.instrukcje.wartosci_logiczne.*;
 
 public interface Instrukcja {
+    
     String typ();
 
-    void fromJson(JsonObject json);
-    String toJava(String nazwaWyjscia);
-    double wykonaj() throws Robson.BladWykonania;
+    // daje instrukcji (ale nie podinstrukcjom) instancję klasy Robson, w której są trzymane jej zmienne
     void robson(Robson robson);
+    
+    // tworzy klasy dla wszystkich podinstrukcji.
+    // wyłuskuje z danego JsonObject dane do siebie i wszystkich swoich podinstrukcji. Potem przypisuje
+    // wszystkim swoim podinstrukcjom swoją instancję klasy Robson.
+    void stworzOdJsona(JsonObject json);
+    
+    // przed poniższymi metodami musi być wywołana metoda robson, a potem stworzOdJsona
+    
+    // generuje kod javowy, który do istniejącej już zmiennej o podanej nazwie zapisuje
+    // wynik instrukcji.
+    String toJava(String nazwaWyjscia);
+    
+    double wykonaj() throws Robson.BladWykonania;
+    
+    // dodaje wszystkie nazwy zmiennych występujące w programie do zbioru w przypisanej klasie Robson
     void dodajZmienne();
 
-    // funkcja wygenerowana automatycznie
+    // zawartość funkcji wygenerowana skryptem genNowaInstrukcja.sh
+    // tworzy instancję konkretnej podklasy klasy Instrukcja na podstawie nazwy
     static Instrukcja nowaInstrukcja(String nazwa) {
         if (nazwa.equals(new Dzielenie().typ()))
             return new Dzielenie();

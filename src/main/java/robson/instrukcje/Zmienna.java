@@ -27,7 +27,7 @@ public class Zmienna implements Instrukcja {
     }
 
     @Override
-    public void fromJson(JsonObject json) {
+    public void stworzOdJsona(JsonObject json) {
         assert(json.get("typ").getAsString().equals(this.typ()));
         nazwa = json.get("nazwa").getAsString();
     }

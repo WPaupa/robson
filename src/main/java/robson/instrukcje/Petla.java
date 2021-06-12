@@ -27,7 +27,7 @@ public class Petla implements Instrukcja {
     }
 
     @Override
-    public void fromJson(JsonObject json) {
+    public void stworzOdJsona(JsonObject json) {
         assert(json.get("typ").getAsString().equals(this.typ()));
         
         JsonObject war = json.get("warunek").getAsJsonObject();
@@ -42,8 +42,8 @@ public class Petla implements Instrukcja {
         warunek.robson(robson);
         blok.robson(robson);
         
-        warunek.fromJson(war);
-        blok.fromJson(blo);
+        warunek.stworzOdJsona(war);
+        blok.stworzOdJsona(blo);
     }
     
     private String nazwaWarunkuZewn() {

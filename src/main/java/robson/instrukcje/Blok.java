@@ -48,7 +48,7 @@ public class Blok implements Instrukcja {
     }
 
     @Override
-    public void fromJson(JsonObject json) {
+    public void stworzOdJsona(JsonObject json) {
         assert (json.get("typ").getAsString().equals(this.typ()));
 
         JsonArray ins = json.get("instrukcje").getAsJsonArray();
@@ -59,7 +59,7 @@ public class Blok implements Instrukcja {
             instrukcje[i] = Instrukcja.nowaInstrukcja(ins.get(i).getAsJsonObject().get("typ").getAsString());
             assert instrukcje[i] != null;
             instrukcje[i].robson(robson);
-            instrukcje[i].fromJson(ins.get(i).getAsJsonObject());
+            instrukcje[i].stworzOdJsona(ins.get(i).getAsJsonObject());
         }
     }
 

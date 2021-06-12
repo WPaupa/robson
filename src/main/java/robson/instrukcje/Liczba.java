@@ -22,7 +22,7 @@ public class Liczba implements Instrukcja {
     }
 
     @Override
-    public void fromJson(JsonObject json) {
+    public void stworzOdJsona(JsonObject json) {
         assert(json.get("typ").getAsString().equals(this.typ()));
         wartosc = json.get("wartosc").getAsDouble();
     }

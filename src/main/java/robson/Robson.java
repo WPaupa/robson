@@ -48,7 +48,7 @@ public class Robson {
             program = Instrukcja.nowaInstrukcja(j.get("typ").getAsString());
             assert program != null;
             program.robson(this);
-            program.fromJson(j);
+            program.stworzOdJsona(j);
         } catch (IOException e) {
             e.printStackTrace();
             throw new NieprawidlowyProgram();

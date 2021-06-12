@@ -25,14 +25,14 @@ public class Negacja implements Instrukcja {
     }
 
     @Override
-    public void fromJson(JsonObject json) {
+    public void stworzOdJsona(JsonObject json) {
         assert(json.get("typ").getAsString().equals(this.typ()));
 
         JsonObject arg = json.get("argument").getAsJsonObject();
         argument = Instrukcja.nowaInstrukcja(arg.get("typ").getAsString());
         assert argument != null;
         argument.robson(robson);
-        argument.fromJson(arg);
+        argument.stworzOdJsona(arg);
     }
 
     @Override

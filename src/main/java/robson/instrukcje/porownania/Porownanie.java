@@ -33,20 +33,20 @@ public abstract class Porownanie implements Instrukcja {
     }
     
     @Override
-    public void fromJson(JsonObject json) {
+    public void stworzOdJsona(JsonObject json) {
         assert(json.get("typ").getAsString().equals(this.typ()));
 
         JsonObject arg1 = json.get("argument1").getAsJsonObject();
         argument1 = Instrukcja.nowaInstrukcja(arg1.get("typ").getAsString());
         assert argument1 != null;
         argument1.robson(robson);
-        argument1.fromJson(arg1);
+        argument1.stworzOdJsona(arg1);
 
         JsonObject arg2 = json.get("argument2").getAsJsonObject();
         argument2 = Instrukcja.nowaInstrukcja(arg2.get("typ").getAsString());
         assert argument2 != null;
         argument2.robson(robson);
-        argument2.fromJson(arg2);
+        argument2.stworzOdJsona(arg2);
     }
     
     @Override

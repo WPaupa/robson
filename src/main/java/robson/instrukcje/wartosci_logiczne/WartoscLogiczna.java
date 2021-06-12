@@ -11,7 +11,7 @@ public abstract class WartoscLogiczna implements Instrukcja {
     }
     
     @Override
-    public void fromJson(JsonObject json) {
+    public void stworzOdJsona(JsonObject json) {
     }
     
     @Override

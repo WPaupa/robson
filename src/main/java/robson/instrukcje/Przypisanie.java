@@ -27,14 +27,14 @@ public class Przypisanie implements Instrukcja {
     }
 
     @Override
-    public void fromJson(JsonObject json) {
+    public void stworzOdJsona(JsonObject json) {
         assert(json.get("typ").getAsString().equals(this.typ()));
         
         JsonObject wart = json.get("wartosc").getAsJsonObject();
         wartosc = Instrukcja.nowaInstrukcja(wart.get("typ").getAsString());
         assert wartosc != null;
         wartosc.robson(robson);
-        wartosc.fromJson(wart);
+        wartosc.stworzOdJsona(wart);
         
         nazwa = json.get("nazwa").getAsString();
     }
