@@ -58,6 +58,19 @@ public class TestyJednostkowe extends TestCase {
         }
     }
 
+    public void testujCzyPierwsza() {
+        try {
+            Robson robson = new Robson();
+            robson.fromJson("czyPierwsza.json");
+            robson.toJson(null);
+            System.out.println(robson.wykonaj());
+            robson.toJava(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            assert false;
+        }
+    }
+
     public void testujInstrukcje() {
         try {
             System.out.println(Objects.requireNonNull(Instrukcja.nowaInstrukcja("Blok")).typ());

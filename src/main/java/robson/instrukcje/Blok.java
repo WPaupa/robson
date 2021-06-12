@@ -29,7 +29,7 @@ public class Blok implements Instrukcja {
     }
 
     private String nazwaInstrukcji(int i) {
-        if (robson.verbose())
+        if (robson.gadatliwy())
             return "_instrukcjaNumer" + i;
         return Integer.toString(i);
     }

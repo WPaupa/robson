@@ -9,12 +9,12 @@ public abstract class Porownanie implements Instrukcja {
     Instrukcja argument1, argument2;
 
     private String nazwaArg1() {
-        if (robson.verbose())
+        if (robson.gadatliwy())
             return "_argument1";
         return "1";
     }
     private String nazwaArg2() {
-        if (robson.verbose())
+        if (robson.gadatliwy())
             return "_argument2";
         return "2";
     }

@@ -40,7 +40,7 @@ public class Przypisanie implements Instrukcja {
     }
     
     private String nazwaWartosci() {
-        if (robson.verbose())
+        if (robson.gadatliwy())
             return "_wartoscDoPrzypisania";
         return "w";
     }

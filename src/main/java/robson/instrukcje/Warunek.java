@@ -57,19 +57,19 @@ public class Warunek implements Instrukcja {
     }
     
     private String nazwaWarunku() {
-        if (robson.verbose())
+        if (robson.gadatliwy())
             return "_warunek";
         return "w";
     }
     
     private String nazwaPrawdy() {
-        if (robson.verbose())
+        if (robson.gadatliwy())
             return "_wartoscBlokuPrawda";
         return "p";
     }
     
     private String nazwaFalszu() {
-        if (robson.verbose())
+        if (robson.gadatliwy())
             return "_wartoscBlokuFalsz";
         return "f";
     }

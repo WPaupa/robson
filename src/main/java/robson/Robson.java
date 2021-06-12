@@ -10,34 +10,34 @@ import robson.instrukcje.Instrukcja;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 
 public class Robson {
     private static class NieprawidlowyProgram extends Exception {}
     public static class BladWykonania extends Exception {}
     private Instrukcja program;
-    private Hashtable<String, Double> zmienne;
-    private Set<String> nazwyZmiennych;
     
-    private boolean verbose;
-    public boolean verbose() {
-        return verbose;
+    // do wykonywania programu
+    private Map<String, Double> zmienne;
+    public void ustawianieZmiennej(String nazwa, double wartosc) {
+        zmienne.put(nazwa, wartosc);
+    }
+    public double wartoscZmiennej(String nazwa) {
+        return zmienne.getOrDefault(nazwa,0.);
     }
     
+    // do deklarowania zmiennych w toJava
+    private Set<String> nazwyZmiennych;
     public void dodanieZmiennej(String nazwa) {
         nazwyZmiennych.add(nazwa);
     }
     
-    public void ustawianieZmiennej(String nazwa, double wartosc) {
-        zmienne.put(nazwa, wartosc);
-    }
-    
-    public double wartoscZmiennej(String nazwa) {
-        return zmienne.getOrDefault(nazwa,0.);
+    // jeśli konstruktor Robsona zostanie wywołany z argumentem gadatliwy=true,
+    // to nazwy zmiennych będą długie i opisowe
+    private boolean gadatliwy;
+    public boolean gadatliwy() {
+        return gadatliwy;
     }
     
     public void fromJson(String filename) throws NieprawidlowyProgram {
@@ -71,6 +71,10 @@ public class Robson {
         }
     }
     
+    // chcemy zadbać o to, żeby pomocnicze zmienne w programie toJava
+    // nie miały takich samych nazw jak zmienne z robsona. W tym celu sprawdzamy,
+    // ile maksymalnie znaków $ mają zmienne z robsona i nasze zmienne pomocnicze będziemy
+    // zaczynali od tej liczby plus jeden znaków $
     private String zmiennaPomocnicza() {
         String wynik = "$";
         for (String x : nazwyZmiennych) {
@@ -78,11 +82,14 @@ public class Robson {
             if (temp > wynik.length())
                 wynik = "$".repeat(temp);
         }
-        if (verbose)
-            return wynik + "zmienna_pomocnicza";
+        if (gadatliwy)
+            return wynik + "zmiennaPomocnicza";
         return wynik;
     }
 
+    // najpierw deklarujemy wszystkie zmienne robsona, potem za pomocą toJava wypisujemy kod programu,
+    // a potem wypisujemy główną zmienną pomocniczą, która trzyma wynik programu. Cały ten kod formatujemy
+    // za pomocą google-java-format i wypisujemy do pliku.
     public void toJava(String filename) {
         assert program != null;
         StringBuilder wynik = new StringBuilder("public class Main\n{\npublic static void main(String[] args)\n{\n");
@@ -112,8 +119,11 @@ public class Robson {
         }
     }
 
+    // Hashmapę ze zmiennymi tworzymy tylko na potrzeby wykonywania programu,
+    // po wykonaniu od razu ją zapominamy, żeby zapisane w niej w trakcie wykonania wielkości
+    // nie wpłynęły na późniejsze wykonania.
     public double wykonaj() throws BladWykonania {
-        this.zmienne = new Hashtable<>();
+        this.zmienne = new HashMap<>();
         double wynik = program.wykonaj();
         this.zmienne = null;
         return wynik;
@@ -121,10 +131,10 @@ public class Robson {
     
     public Robson() {
         this.nazwyZmiennych = new HashSet<>();
-        this.verbose = false;
+        this.gadatliwy = false;
     }
-    public Robson(boolean verbose) {
+    public Robson(boolean gadatliwy) {
         this.nazwyZmiennych = new HashSet<>();
-        this.verbose = verbose;
+        this.gadatliwy = gadatliwy;
     }
 }

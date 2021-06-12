@@ -47,19 +47,19 @@ public class Petla implements Instrukcja {
     }
     
     private String nazwaWarunkuZewn() {
-        if (robson.verbose())
+        if (robson.gadatliwy())
             return "_warunekPetli";
         return "w";
     }
     
     private String nazwaWarunkuWewn() {
-        if (robson.verbose())
+        if (robson.gadatliwy())
             return "_tymczasowyWarunekPetli";
         return "d";
     }
     
     private String nazwaBloku() {
-        if (robson.verbose())
+        if (robson.gadatliwy())
             return "_blokPetli";
         return "b";
     }
