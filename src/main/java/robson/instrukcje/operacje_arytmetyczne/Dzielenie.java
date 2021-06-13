@@ -4,6 +4,7 @@ import robson.Robson;
 
 public class Dzielenie extends OperacjaArytmetyczna {
     // zapisane jako atrybut, żeby wypisało się do jsona
+    // tak samo w każdej innej konkretnej podklasie Instrukcji (ale nie warto kopiować tego komentarza wszędzie)
     private static final String typ = "Dzielenie";
     @Override
     public String typ() {

@@ -23,6 +23,9 @@ public interface Instrukcja {
     
     // generuje kod javowy, który do istniejącej już zmiennej o podanej nazwie zapisuje
     // wynik instrukcji.
+    // Wypisany kod działa w ten sposób, że każda Instrukcja tworzy pomocnicze zmienne
+    // na wyniki swoich podinstrukcji (argumentów), prosi toJava o przypisanie tym zmiennym tych wyników
+    // i na koniec przypisuje zmiennej o podanej nazwie swój wynik.
     String toJava(String nazwaWyjscia);
     
     double wykonaj() throws Robson.BladWykonania;

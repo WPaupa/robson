@@ -34,7 +34,7 @@ public class Robson {
     }
     
     // jeśli konstruktor Robsona zostanie wywołany z argumentem gadatliwy=true,
-    // to nazwy zmiennych będą długie i opisowe
+    // to nazwy zmiennych będą długie i opisowe. Zaleca się używania tej opcji tylko do bardzo prostych programów.
     private boolean gadatliwy;
     public boolean gadatliwy() {
         return gadatliwy;
@@ -62,7 +62,11 @@ public class Robson {
         GsonBuilder g = new GsonBuilder();
         // żeby wypisywało też typ, który jest klasowy
         g.excludeFieldsWithModifiers(java.lang.reflect.Modifier.TRANSIENT);
-        Gson gson = g.setPrettyPrinting().create();
+        // żeby poprawnie wypisywało znaki typu <, > i =
+        g.disableHtmlEscaping();
+        // żeby formatowało wyjście
+        g.setPrettyPrinting();
+        Gson gson = g.create();
         String json = gson.toJson(program);
         if (Objects.isNull(filename))
             System.out.println(json);

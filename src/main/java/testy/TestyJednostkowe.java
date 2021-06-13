@@ -9,7 +9,7 @@ import java.util.Objects;
 public class TestyJednostkowe extends TestCase {
     public void testujPrzyklad() {
         try {
-            Robson robson = new Robson();
+            Robson robson = new Robson(true);
             robson.fromJson("przyklad1.json");
             robson.toJson(null);
             System.out.println(robson.wykonaj());
@@ -63,6 +63,45 @@ public class TestyJednostkowe extends TestCase {
         try {
             Robson robson = new Robson();
             robson.fromJson("czyPierwsza.json");
+            robson.toJson(null);
+            System.out.println(robson.wykonaj());
+            robson.toJava(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            assert false;
+        }
+    }
+    
+    public void testujMyTest() {
+        try {
+            Robson robson = new Robson();
+            robson.fromJson("myTest.json");
+            robson.toJson(null);
+            System.out.println(robson.wykonaj());
+            robson.toJava(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            assert false;
+        }
+    }
+
+    public void testujSilnia() {
+        try {
+            Robson robson = new Robson();
+            robson.fromJson("silnia.json");
+            robson.toJson(null);
+            System.out.println(robson.wykonaj());
+            robson.toJava(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            assert false;
+        }
+    }
+
+    public void testujBinomial() {
+        try {
+            Robson robson = new Robson();
+            robson.fromJson("binomial.json");
             robson.toJson(null);
             System.out.println(robson.wykonaj());
             robson.toJava(null);

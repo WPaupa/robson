@@ -1,0 +1,1449 @@
+{
+  "typ": "If",
+  "warunek": {
+    "typ": "==",
+    "argument1": {
+      "typ": "Dzielenie",
+      "argument1": {
+        "typ": "==",
+        "argument1": {
+          "typ": "Dzielenie",
+          "argument1": {
+            "typ": "Razy",
+            "argument1": {
+              "typ": ">=",
+              "argument1": {
+                "typ": "<=",
+                "argument1": {
+                  "typ": "<",
+                  "argument1": {
+                    "typ": "Liczba",
+                    "wartosc": 0.0
+                  },
+                  "argument2": {
+                    "typ": "==",
+                    "argument1": {
+                      "typ": "==",
+                      "argument1": {
+                        "typ": "Przypisanie",
+                        "nazwa": "y",
+                        "wartosc": {
+                          "typ": "Plus",
+                          "argument1": {
+                            "typ": "Plus",
+                            "argument1": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "==",
+                                    "argument1": {
+                                      "typ": ">",
+                                      "argument1": {
+                                        "typ": "Blok",
+                                        "instrukcje": [
+                                          {
+                                            "typ": "Zmienna",
+                                            "nazwa": "x"
+                                          },
+                                          {
+                                            "typ": "Przypisanie",
+                                            "nazwa": "x",
+                                            "wartosc": {
+                                              "typ": "Liczba",
+                                              "wartosc": 5.0
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      "argument2": {
+                                        "typ": "Liczba",
+                                        "wartosc": 4.5
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "True"
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "False"
+                                  }
+                                }
+                              }
+                            },
+                            "argument2": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "==",
+                                    "argument1": {
+                                      "typ": ">",
+                                      "argument1": {
+                                        "typ": "Blok",
+                                        "instrukcje": [
+                                          {
+                                            "typ": "Zmienna",
+                                            "nazwa": "x"
+                                          },
+                                          {
+                                            "typ": "Przypisanie",
+                                            "nazwa": "x",
+                                            "wartosc": {
+                                              "typ": "Liczba",
+                                              "wartosc": 5.0
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      "argument2": {
+                                        "typ": "Liczba",
+                                        "wartosc": 4.5
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "True"
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "False"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "argument2": {
+                            "typ": "Plus",
+                            "argument1": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "==",
+                                    "argument1": {
+                                      "typ": ">",
+                                      "argument1": {
+                                        "typ": "Blok",
+                                        "instrukcje": [
+                                          {
+                                            "typ": "Zmienna",
+                                            "nazwa": "x"
+                                          },
+                                          {
+                                            "typ": "Przypisanie",
+                                            "nazwa": "x",
+                                            "wartosc": {
+                                              "typ": "Liczba",
+                                              "wartosc": 5.0
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      "argument2": {
+                                        "typ": "Liczba",
+                                        "wartosc": 4.5
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "True"
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "False"
+                                  }
+                                }
+                              }
+                            },
+                            "argument2": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "==",
+                                    "argument1": {
+                                      "typ": ">",
+                                      "argument1": {
+                                        "typ": "Blok",
+                                        "instrukcje": [
+                                          {
+                                            "typ": "Zmienna",
+                                            "nazwa": "x"
+                                          },
+                                          {
+                                            "typ": "Przypisanie",
+                                            "nazwa": "x",
+                                            "wartosc": {
+                                              "typ": "Liczba",
+                                              "wartosc": 5.0
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      "argument2": {
+                                        "typ": "Liczba",
+                                        "wartosc": 4.5
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "True"
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "False"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "argument2": {
+                        "typ": "Liczba",
+                        "wartosc": 4.0
+                      }
+                    },
+                    "argument2": {
+                      "typ": "True"
+                    }
+                  }
+                },
+                "argument2": {
+                  "typ": "<",
+                  "argument1": {
+                    "typ": "Liczba",
+                    "wartosc": 0.0
+                  },
+                  "argument2": {
+                    "typ": "==",
+                    "argument1": {
+                      "typ": "==",
+                      "argument1": {
+                        "typ": "Przypisanie",
+                        "nazwa": "y",
+                        "wartosc": {
+                          "typ": "Plus",
+                          "argument1": {
+                            "typ": "Plus",
+                            "argument1": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "==",
+                                    "argument1": {
+                                      "typ": ">",
+                                      "argument1": {
+                                        "typ": "Blok",
+                                        "instrukcje": [
+                                          {
+                                            "typ": "Zmienna",
+                                            "nazwa": "x"
+                                          },
+                                          {
+                                            "typ": "Przypisanie",
+                                            "nazwa": "x",
+                                            "wartosc": {
+                                              "typ": "Liczba",
+                                              "wartosc": 5.0
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      "argument2": {
+                                        "typ": "Liczba",
+                                        "wartosc": 4.5
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "True"
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "False"
+                                  }
+                                }
+                              }
+                            },
+                            "argument2": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "==",
+                                    "argument1": {
+                                      "typ": ">",
+                                      "argument1": {
+                                        "typ": "Blok",
+                                        "instrukcje": [
+                                          {
+                                            "typ": "Zmienna",
+                                            "nazwa": "x"
+                                          },
+                                          {
+                                            "typ": "Przypisanie",
+                                            "nazwa": "x",
+                                            "wartosc": {
+                                              "typ": "Liczba",
+                                              "wartosc": 5.0
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      "argument2": {
+                                        "typ": "Liczba",
+                                        "wartosc": 4.5
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "True"
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "False"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "argument2": {
+                            "typ": "Plus",
+                            "argument1": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "==",
+                                    "argument1": {
+                                      "typ": ">",
+                                      "argument1": {
+                                        "typ": "Blok",
+                                        "instrukcje": [
+                                          {
+                                            "typ": "Zmienna",
+                                            "nazwa": "x"
+                                          },
+                                          {
+                                            "typ": "Przypisanie",
+                                            "nazwa": "x",
+                                            "wartosc": {
+                                              "typ": "Liczba",
+                                              "wartosc": 5.0
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      "argument2": {
+                                        "typ": "Liczba",
+                                        "wartosc": 4.5
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "True"
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "False"
+                                  }
+                                }
+                              }
+                            },
+                            "argument2": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "==",
+                                    "argument1": {
+                                      "typ": ">",
+                                      "argument1": {
+                                        "typ": "Blok",
+                                        "instrukcje": [
+                                          {
+                                            "typ": "Zmienna",
+                                            "nazwa": "x"
+                                          },
+                                          {
+                                            "typ": "Przypisanie",
+                                            "nazwa": "x",
+                                            "wartosc": {
+                                              "typ": "Liczba",
+                                              "wartosc": 5.0
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      "argument2": {
+                                        "typ": "Liczba",
+                                        "wartosc": 4.5
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "True"
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "False"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "argument2": {
+                        "typ": "Liczba",
+                        "wartosc": 4.0
+                      }
+                    },
+                    "argument2": {
+                      "typ": "True"
+                    }
+                  }
+                }
+              },
+              "argument2": {
+                "typ": "<",
+                "argument1": {
+                  "typ": "Liczba",
+                  "wartosc": 0.0
+                },
+                "argument2": {
+                  "typ": "==",
+                  "argument1": {
+                    "typ": "==",
+                    "argument1": {
+                      "typ": "Przypisanie",
+                      "nazwa": "y",
+                      "wartosc": {
+                        "typ": "Plus",
+                        "argument1": {
+                          "typ": "Plus",
+                          "argument1": {
+                            "typ": "Or",
+                            "argument1": {
+                              "typ": "False"
+                            },
+                            "argument2": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "==",
+                                  "argument1": {
+                                    "typ": ">",
+                                    "argument1": {
+                                      "typ": "Blok",
+                                      "instrukcje": [
+                                        {
+                                          "typ": "Zmienna",
+                                          "nazwa": "x"
+                                        },
+                                        {
+                                          "typ": "Przypisanie",
+                                          "nazwa": "x",
+                                          "wartosc": {
+                                            "typ": "Liczba",
+                                            "wartosc": 5.0
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "argument2": {
+                                      "typ": "Liczba",
+                                      "wartosc": 4.5
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "True"
+                                  }
+                                },
+                                "argument2": {
+                                  "typ": "False"
+                                }
+                              }
+                            }
+                          },
+                          "argument2": {
+                            "typ": "Or",
+                            "argument1": {
+                              "typ": "False"
+                            },
+                            "argument2": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "==",
+                                  "argument1": {
+                                    "typ": ">",
+                                    "argument1": {
+                                      "typ": "Blok",
+                                      "instrukcje": [
+                                        {
+                                          "typ": "Zmienna",
+                                          "nazwa": "x"
+                                        },
+                                        {
+                                          "typ": "Przypisanie",
+                                          "nazwa": "x",
+                                          "wartosc": {
+                                            "typ": "Liczba",
+                                            "wartosc": 5.0
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "argument2": {
+                                      "typ": "Liczba",
+                                      "wartosc": 4.5
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "True"
+                                  }
+                                },
+                                "argument2": {
+                                  "typ": "False"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "argument2": {
+                          "typ": "Plus",
+                          "argument1": {
+                            "typ": "Or",
+                            "argument1": {
+                              "typ": "False"
+                            },
+                            "argument2": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "==",
+                                  "argument1": {
+                                    "typ": ">",
+                                    "argument1": {
+                                      "typ": "Blok",
+                                      "instrukcje": [
+                                        {
+                                          "typ": "Zmienna",
+                                          "nazwa": "x"
+                                        },
+                                        {
+                                          "typ": "Przypisanie",
+                                          "nazwa": "x",
+                                          "wartosc": {
+                                            "typ": "Liczba",
+                                            "wartosc": 5.0
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "argument2": {
+                                      "typ": "Liczba",
+                                      "wartosc": 4.5
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "True"
+                                  }
+                                },
+                                "argument2": {
+                                  "typ": "False"
+                                }
+                              }
+                            }
+                          },
+                          "argument2": {
+                            "typ": "Or",
+                            "argument1": {
+                              "typ": "False"
+                            },
+                            "argument2": {
+                              "typ": "Or",
+                              "argument1": {
+                                "typ": "False"
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "==",
+                                  "argument1": {
+                                    "typ": ">",
+                                    "argument1": {
+                                      "typ": "Blok",
+                                      "instrukcje": [
+                                        {
+                                          "typ": "Zmienna",
+                                          "nazwa": "x"
+                                        },
+                                        {
+                                          "typ": "Przypisanie",
+                                          "nazwa": "x",
+                                          "wartosc": {
+                                            "typ": "Liczba",
+                                            "wartosc": 5.0
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "argument2": {
+                                      "typ": "Liczba",
+                                      "wartosc": 4.5
+                                    }
+                                  },
+                                  "argument2": {
+                                    "typ": "True"
+                                  }
+                                },
+                                "argument2": {
+                                  "typ": "False"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "argument2": {
+                      "typ": "Liczba",
+                      "wartosc": 4.0
+                    }
+                  },
+                  "argument2": {
+                    "typ": "True"
+                  }
+                }
+              }
+            },
+            "argument2": {
+              "typ": "Liczba",
+              "wartosc": 12.0
+            }
+          },
+          "argument2": {
+            "typ": "Liczba",
+            "wartosc": 4.0
+          }
+        },
+        "argument2": {
+          "typ": "Liczba",
+          "wartosc": 3.0
+        }
+      },
+      "argument2": {
+        "typ": "Liczba",
+        "wartosc": 0.5
+      }
+    },
+    "argument2": {
+      "typ": "Liczba",
+      "wartosc": 2.0
+    }
+  },
+  "blok_prawda": {
+    "typ": "Blok",
+    "instrukcje": [
+      {
+        "typ": "==",
+        "argument1": {
+          "typ": "Dzielenie",
+          "argument1": {
+            "typ": "==",
+            "argument1": {
+              "typ": "Dzielenie",
+              "argument1": {
+                "typ": "Razy",
+                "argument1": {
+                  "typ": ">=",
+                  "argument1": {
+                    "typ": "<=",
+                    "argument1": {
+                      "typ": "<",
+                      "argument1": {
+                        "typ": "Liczba",
+                        "wartosc": 0.0
+                      },
+                      "argument2": {
+                        "typ": "==",
+                        "argument1": {
+                          "typ": "==",
+                          "argument1": {
+                            "typ": "Przypisanie",
+                            "nazwa": "y",
+                            "wartosc": {
+                              "typ": "Plus",
+                              "argument1": {
+                                "typ": "Plus",
+                                "argument1": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "False"
+                                    },
+                                    "argument2": {
+                                      "typ": "Or",
+                                      "argument1": {
+                                        "typ": "==",
+                                        "argument1": {
+                                          "typ": ">",
+                                          "argument1": {
+                                            "typ": "Blok",
+                                            "instrukcje": [
+                                              {
+                                                "typ": "Zmienna",
+                                                "nazwa": "x"
+                                              },
+                                              {
+                                                "typ": "Przypisanie",
+                                                "nazwa": "x",
+                                                "wartosc": {
+                                                  "typ": "Liczba",
+                                                  "wartosc": 5.0
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          "argument2": {
+                                            "typ": "Liczba",
+                                            "wartosc": 4.5
+                                          }
+                                        },
+                                        "argument2": {
+                                          "typ": "True"
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "False"
+                                      }
+                                    }
+                                  }
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "False"
+                                    },
+                                    "argument2": {
+                                      "typ": "Or",
+                                      "argument1": {
+                                        "typ": "==",
+                                        "argument1": {
+                                          "typ": ">",
+                                          "argument1": {
+                                            "typ": "Blok",
+                                            "instrukcje": [
+                                              {
+                                                "typ": "Zmienna",
+                                                "nazwa": "x"
+                                              },
+                                              {
+                                                "typ": "Przypisanie",
+                                                "nazwa": "x",
+                                                "wartosc": {
+                                                  "typ": "Liczba",
+                                                  "wartosc": 5.0
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          "argument2": {
+                                            "typ": "Liczba",
+                                            "wartosc": 4.5
+                                          }
+                                        },
+                                        "argument2": {
+                                          "typ": "True"
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "False"
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "argument2": {
+                                "typ": "Plus",
+                                "argument1": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "False"
+                                    },
+                                    "argument2": {
+                                      "typ": "Or",
+                                      "argument1": {
+                                        "typ": "==",
+                                        "argument1": {
+                                          "typ": ">",
+                                          "argument1": {
+                                            "typ": "Blok",
+                                            "instrukcje": [
+                                              {
+                                                "typ": "Zmienna",
+                                                "nazwa": "x"
+                                              },
+                                              {
+                                                "typ": "Przypisanie",
+                                                "nazwa": "x",
+                                                "wartosc": {
+                                                  "typ": "Liczba",
+                                                  "wartosc": 5.0
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          "argument2": {
+                                            "typ": "Liczba",
+                                            "wartosc": 4.5
+                                          }
+                                        },
+                                        "argument2": {
+                                          "typ": "True"
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "False"
+                                      }
+                                    }
+                                  }
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "False"
+                                    },
+                                    "argument2": {
+                                      "typ": "Or",
+                                      "argument1": {
+                                        "typ": "==",
+                                        "argument1": {
+                                          "typ": ">",
+                                          "argument1": {
+                                            "typ": "Blok",
+                                            "instrukcje": [
+                                              {
+                                                "typ": "Zmienna",
+                                                "nazwa": "x"
+                                              },
+                                              {
+                                                "typ": "Przypisanie",
+                                                "nazwa": "x",
+                                                "wartosc": {
+                                                  "typ": "Liczba",
+                                                  "wartosc": 5.0
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          "argument2": {
+                                            "typ": "Liczba",
+                                            "wartosc": 4.5
+                                          }
+                                        },
+                                        "argument2": {
+                                          "typ": "True"
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "False"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "argument2": {
+                            "typ": "Liczba",
+                            "wartosc": 4.0
+                          }
+                        },
+                        "argument2": {
+                          "typ": "True"
+                        }
+                      }
+                    },
+                    "argument2": {
+                      "typ": "<",
+                      "argument1": {
+                        "typ": "Liczba",
+                        "wartosc": 0.0
+                      },
+                      "argument2": {
+                        "typ": "==",
+                        "argument1": {
+                          "typ": "==",
+                          "argument1": {
+                            "typ": "Przypisanie",
+                            "nazwa": "y",
+                            "wartosc": {
+                              "typ": "Plus",
+                              "argument1": {
+                                "typ": "Plus",
+                                "argument1": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "False"
+                                    },
+                                    "argument2": {
+                                      "typ": "Or",
+                                      "argument1": {
+                                        "typ": "==",
+                                        "argument1": {
+                                          "typ": ">",
+                                          "argument1": {
+                                            "typ": "Blok",
+                                            "instrukcje": [
+                                              {
+                                                "typ": "Zmienna",
+                                                "nazwa": "x"
+                                              },
+                                              {
+                                                "typ": "Przypisanie",
+                                                "nazwa": "x",
+                                                "wartosc": {
+                                                  "typ": "Liczba",
+                                                  "wartosc": 5.0
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          "argument2": {
+                                            "typ": "Liczba",
+                                            "wartosc": 4.5
+                                          }
+                                        },
+                                        "argument2": {
+                                          "typ": "True"
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "False"
+                                      }
+                                    }
+                                  }
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "False"
+                                    },
+                                    "argument2": {
+                                      "typ": "Or",
+                                      "argument1": {
+                                        "typ": "==",
+                                        "argument1": {
+                                          "typ": ">",
+                                          "argument1": {
+                                            "typ": "Blok",
+                                            "instrukcje": [
+                                              {
+                                                "typ": "Zmienna",
+                                                "nazwa": "x"
+                                              },
+                                              {
+                                                "typ": "Przypisanie",
+                                                "nazwa": "x",
+                                                "wartosc": {
+                                                  "typ": "Liczba",
+                                                  "wartosc": 5.0
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          "argument2": {
+                                            "typ": "Liczba",
+                                            "wartosc": 4.5
+                                          }
+                                        },
+                                        "argument2": {
+                                          "typ": "True"
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "False"
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "argument2": {
+                                "typ": "Plus",
+                                "argument1": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "False"
+                                    },
+                                    "argument2": {
+                                      "typ": "Or",
+                                      "argument1": {
+                                        "typ": "==",
+                                        "argument1": {
+                                          "typ": ">",
+                                          "argument1": {
+                                            "typ": "Blok",
+                                            "instrukcje": [
+                                              {
+                                                "typ": "Zmienna",
+                                                "nazwa": "x"
+                                              },
+                                              {
+                                                "typ": "Przypisanie",
+                                                "nazwa": "x",
+                                                "wartosc": {
+                                                  "typ": "Liczba",
+                                                  "wartosc": 5.0
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          "argument2": {
+                                            "typ": "Liczba",
+                                            "wartosc": 4.5
+                                          }
+                                        },
+                                        "argument2": {
+                                          "typ": "True"
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "False"
+                                      }
+                                    }
+                                  }
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "False"
+                                    },
+                                    "argument2": {
+                                      "typ": "Or",
+                                      "argument1": {
+                                        "typ": "==",
+                                        "argument1": {
+                                          "typ": ">",
+                                          "argument1": {
+                                            "typ": "Blok",
+                                            "instrukcje": [
+                                              {
+                                                "typ": "Zmienna",
+                                                "nazwa": "x"
+                                              },
+                                              {
+                                                "typ": "Przypisanie",
+                                                "nazwa": "x",
+                                                "wartosc": {
+                                                  "typ": "Liczba",
+                                                  "wartosc": 5.0
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          "argument2": {
+                                            "typ": "Liczba",
+                                            "wartosc": 4.5
+                                          }
+                                        },
+                                        "argument2": {
+                                          "typ": "True"
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "False"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "argument2": {
+                            "typ": "Liczba",
+                            "wartosc": 4.0
+                          }
+                        },
+                        "argument2": {
+                          "typ": "True"
+                        }
+                      }
+                    }
+                  },
+                  "argument2": {
+                    "typ": "<",
+                    "argument1": {
+                      "typ": "Liczba",
+                      "wartosc": 0.0
+                    },
+                    "argument2": {
+                      "typ": "==",
+                      "argument1": {
+                        "typ": "==",
+                        "argument1": {
+                          "typ": "Przypisanie",
+                          "nazwa": "y",
+                          "wartosc": {
+                            "typ": "Plus",
+                            "argument1": {
+                              "typ": "Plus",
+                              "argument1": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "==",
+                                      "argument1": {
+                                        "typ": ">",
+                                        "argument1": {
+                                          "typ": "Blok",
+                                          "instrukcje": [
+                                            {
+                                              "typ": "Zmienna",
+                                              "nazwa": "x"
+                                            },
+                                            {
+                                              "typ": "Przypisanie",
+                                              "nazwa": "x",
+                                              "wartosc": {
+                                                "typ": "Liczba",
+                                                "wartosc": 5.0
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "argument2": {
+                                          "typ": "Liczba",
+                                          "wartosc": 4.5
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "True"
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "False"
+                                    }
+                                  }
+                                }
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "==",
+                                      "argument1": {
+                                        "typ": ">",
+                                        "argument1": {
+                                          "typ": "Blok",
+                                          "instrukcje": [
+                                            {
+                                              "typ": "Zmienna",
+                                              "nazwa": "x"
+                                            },
+                                            {
+                                              "typ": "Przypisanie",
+                                              "nazwa": "x",
+                                              "wartosc": {
+                                                "typ": "Liczba",
+                                                "wartosc": 5.0
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "argument2": {
+                                          "typ": "Liczba",
+                                          "wartosc": 4.5
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "True"
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "False"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "argument2": {
+                              "typ": "Plus",
+                              "argument1": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "==",
+                                      "argument1": {
+                                        "typ": ">",
+                                        "argument1": {
+                                          "typ": "Blok",
+                                          "instrukcje": [
+                                            {
+                                              "typ": "Zmienna",
+                                              "nazwa": "x"
+                                            },
+                                            {
+                                              "typ": "Przypisanie",
+                                              "nazwa": "x",
+                                              "wartosc": {
+                                                "typ": "Liczba",
+                                                "wartosc": 5.0
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "argument2": {
+                                          "typ": "Liczba",
+                                          "wartosc": 4.5
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "True"
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "False"
+                                    }
+                                  }
+                                }
+                              },
+                              "argument2": {
+                                "typ": "Or",
+                                "argument1": {
+                                  "typ": "False"
+                                },
+                                "argument2": {
+                                  "typ": "Or",
+                                  "argument1": {
+                                    "typ": "False"
+                                  },
+                                  "argument2": {
+                                    "typ": "Or",
+                                    "argument1": {
+                                      "typ": "==",
+                                      "argument1": {
+                                        "typ": ">",
+                                        "argument1": {
+                                          "typ": "Blok",
+                                          "instrukcje": [
+                                            {
+                                              "typ": "Zmienna",
+                                              "nazwa": "x"
+                                            },
+                                            {
+                                              "typ": "Przypisanie",
+                                              "nazwa": "x",
+                                              "wartosc": {
+                                                "typ": "Liczba",
+                                                "wartosc": 5.0
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "argument2": {
+                                          "typ": "Liczba",
+                                          "wartosc": 4.5
+                                        }
+                                      },
+                                      "argument2": {
+                                        "typ": "True"
+                                      }
+                                    },
+                                    "argument2": {
+                                      "typ": "False"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "argument2": {
+                          "typ": "Liczba",
+                          "wartosc": 4.0
+                        }
+                      },
+                      "argument2": {
+                        "typ": "True"
+                      }
+                    }
+                  }
+                },
+                "argument2": {
+                  "typ": "Liczba",
+                  "wartosc": 12.0
+                }
+              },
+              "argument2": {
+                "typ": "Liczba",
+                "wartosc": 4.0
+              }
+            },
+            "argument2": {
+              "typ": "Liczba",
+              "wartosc": 3.0
+            }
+          },
+          "argument2": {
+            "typ": "Liczba",
+            "wartosc": 0.5
+          }
+        },
+        "argument2": {
+          "typ": "Liczba",
+          "wartosc": 2.0
+        }
+      }
+    ]
+  },
+  "blok_falsz": {
+    "typ": "Blok",
+    "instrukcje": [
+      {
+        "typ": "Liczba",
+        "wartosc": 5.0
+      }
+    ]
+  }
+}
