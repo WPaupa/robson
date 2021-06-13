@@ -7,7 +7,7 @@ import robson.instrukcje.Instrukcja;
 import java.util.Objects;
 
 public class TestyJednostkowe extends TestCase {
-    public void testujPrzyklad() {
+    public void testujPrzyklad1() {
         try {
             Robson robson = new Robson(true);
             robson.fromJson("przyklad1.json");
@@ -102,6 +102,19 @@ public class TestyJednostkowe extends TestCase {
         try {
             Robson robson = new Robson();
             robson.fromJson("binomial.json");
+            robson.toJson(null);
+            System.out.println(robson.wykonaj());
+            robson.toJava(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            assert false;
+        }
+    }
+
+    public void testujPochodnaArytmetyczna() {
+        try {
+            Robson robson = new Robson();
+            robson.fromJson("pochodnaArytmetyczna.json");
             robson.toJson(null);
             System.out.println(robson.wykonaj());
             robson.toJava(null);

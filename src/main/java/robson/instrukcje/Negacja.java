@@ -46,9 +46,7 @@ public class Negacja implements Instrukcja {
     @Override
     public double wykonaj() throws Robson.BladWykonania {
         double arg = argument.wykonaj();
-        if (arg != 0 && arg != 1)
-            throw new Robson.BladWykonania();
-        if (arg == 1)
+        if (arg != 0)
             return 0;
         return 1;
     }

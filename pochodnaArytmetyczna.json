@@ -1,0 +1,262 @@
+{
+  "typ":"Blok",
+  "instrukcje":[
+    {
+      "typ":"Przypisanie",
+      "nazwa":"ARG",
+      "wartosc":{
+        "typ":"Liczba",
+        "wartosc":100.0
+      }
+    },
+    {
+      "typ":"Przypisanie",
+      "nazwa":"ARG_init",
+      "wartosc":{
+        "typ":"Zmienna",
+        "nazwa":"ARG"
+      }
+    },
+    {
+      "typ":"Przypisanie",
+      "nazwa":"Dzielnik",
+      "wartosc":{
+        "typ":"Liczba",
+        "wartosc":2.0
+      }
+    },
+    {
+      "typ":"While",
+      "warunek":{
+        "typ": "Or",
+        "argument1":{
+          "typ":"<=",
+          "argument1":{
+            "typ":"Razy",
+            "argument1":{
+              "typ": "Zmienna",
+              "nazwa": "Dzielnik"
+            },
+            "argument2":{
+              "typ": "Zmienna",
+              "nazwa": "Dzielnik"
+            }
+          },
+          "argument2":{
+            "typ":"Zmienna",
+            "nazwa": "ARG"
+          }
+        },
+        "argument2":{
+          "typ": "==",
+          "argument1":{
+            "typ": "Zmienna",
+            "nazwa": "Dzielnik"
+          },
+          "argument2":{
+            "typ": "Zmienna",
+            "nazwa": "ARG"
+          }
+        }
+      },
+      "blok":{
+        "typ":"If",
+        "warunek":{
+          "typ":"Blok",
+          "instrukcje":[
+            {
+              "typ":"Przypisanie",
+              "nazwa":"czyPodzielna",
+              "wartosc":{
+                "typ":"Zmienna",
+                "nazwa":"ARG"
+              }
+            },
+            {
+              "typ":"While",
+              "warunek":{
+                "typ":">",
+                "argument1":{
+                  "typ":"Zmienna",
+                  "nazwa":"czyPodzielna"
+                },
+                "argument2":{
+                  "typ":"Liczba",
+                  "wartosc":0.0
+                }
+              },
+              "blok":{
+                "typ":"Przypisanie",
+                "nazwa":"czyPodzielna",
+                "wartosc":{
+                  "typ":"Minus",
+                  "argument1":{
+                    "typ":"Zmienna",
+                    "nazwa":"czyPodzielna"
+                  },
+                  "argument2":{
+                    "typ":"Zmienna",
+                    "nazwa":"Dzielnik"
+                  }
+                }
+              }
+            },
+            {
+              "typ":"Not",
+              "argument":{
+                "typ":"Zmienna",
+                "nazwa":"czyPodzielna"
+              }
+            }
+          ]
+        },
+        "blok_prawda":{
+          "typ":"Blok",
+          "instrukcje":[
+            {
+              "typ":"Przypisanie",
+              "nazwa":"wykladnik",
+              "wartosc":{
+                "typ":"Plus",
+                "argument1":{
+                  "typ":"Zmienna",
+                  "nazwa":"wykladnik"
+                },
+                "argument2":{
+                  "typ":"Liczba",
+                  "wartosc":1.0
+                }
+              }
+            },
+            {
+              "typ":"Przypisanie",
+              "nazwa":"ARG",
+              "wartosc":{
+                "typ":"Dzielenie",
+                "argument1":{
+                  "typ":"Zmienna",
+                  "nazwa":"ARG"
+                },
+                "argument2":{
+                  "typ":"Zmienna",
+                  "nazwa":"Dzielnik"
+                }
+              }
+            }
+          ]
+        },
+        "blok_falsz":{
+          "typ":"Blok",
+          "instrukcje":[
+            {
+              "typ":"Przypisanie",
+              "nazwa":"logDer",
+              "wartosc":{
+                "typ":"Plus",
+                "argument1":{
+                  "typ":"Zmienna",
+                  "nazwa":"logDer"
+                },
+                "argument2":{
+                  "typ":"Dzielenie",
+                  "argument1":{
+                    "typ":"Zmienna",
+                    "nazwa":"wykladnik"
+                  },
+                  "argument2":{
+                    "typ":"Zmienna",
+                    "nazwa":"Dzielnik"
+                  }
+                }
+              }
+            },
+            {
+              "typ":"Przypisanie",
+              "nazwa":"wykladnik",
+              "wartosc":{
+                "typ":"Liczba",
+                "wartosc":0.0
+              }
+            },
+            {
+              "typ":"Przypisanie",
+              "nazwa":"Dzielnik",
+              "wartosc":{
+                "typ":"Plus",
+                "argument1":{
+                  "typ":"Zmienna",
+                  "nazwa":"Dzielnik"
+                },
+                "argument2":{
+                  "typ":"Liczba",
+                  "wartosc":1.0
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "typ": "Przypisanie",
+      "nazwa": "logDer",
+      "wartosc":{
+        "typ": "Plus",
+        "argument1":{
+          "typ": "Zmienna",
+          "nazwa": "logDer"
+        },
+        "argument2":{
+          "typ": "Dzielenie",
+          "argument1":{
+            "typ": "Zmienna",
+            "nazwa": "wykladnik"
+          },
+          "argument2":{
+            "typ": "Zmienna",
+            "nazwa": "Dzielnik"
+          }
+        }
+      }
+    },
+    {
+      "typ":"Razy",
+      "argument1":{
+        "typ":"Zmienna",
+        "nazwa":"ARG_init"
+      },
+      "argument2":{
+        "typ": "Plus",
+        "argument1":{
+          "typ": "Zmienna",
+          "nazwa": "logDer"
+        },
+        "argument2":{
+          "typ":"If",
+          "warunek":{
+            "typ":">",
+            "argument1":{
+              "typ":"Zmienna",
+              "nazwa":"ARG"
+            },
+            "argument2":{
+              "typ":"Liczba",
+              "wartosc":1.0
+            }
+          },
+          "blok_prawda":{
+            "typ":"Dzielenie",
+            "argument1":{
+              "typ": "Liczba",
+              "wartosc": 1.0
+            },
+            "argument2":{
+              "typ":"Zmienna",
+              "nazwa":"ARG"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
