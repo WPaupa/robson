@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import robson.Robson;
 
 public class Przypisanie implements Instrukcja {
-    
+
     private String nazwa;
     private Instrukcja wartosc;
     private transient Robson robson;
@@ -21,6 +21,7 @@ public class Przypisanie implements Instrukcja {
     }
 
     private static final String typ = "Przypisanie";
+
     @Override
     public String typ() {
         return typ;
@@ -28,17 +29,17 @@ public class Przypisanie implements Instrukcja {
 
     @Override
     public void stworzOdJsona(JsonObject json) {
-        assert(json.get("typ").getAsString().equals(this.typ()));
-        
+        assert (json.get("typ").getAsString().equals(this.typ()));
+
         JsonObject wart = json.get("wartosc").getAsJsonObject();
         wartosc = Instrukcja.nowaInstrukcja(wart.get("typ").getAsString());
         assert wartosc != null;
         wartosc.robson(robson);
         wartosc.stworzOdJsona(wart);
-        
+
         nazwa = json.get("nazwa").getAsString();
     }
-    
+
     private String nazwaWartosci() {
         if (robson.gadatliwy())
             return "_wartoscDoPrzypisania";

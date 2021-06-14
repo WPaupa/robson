@@ -5,7 +5,7 @@ import robson.Robson;
 
 public class Liczba implements Instrukcja {
     private double wartosc;
-    
+
     // nie potrzebujemy robsona
     @Override
     public void robson(Robson robson) {
@@ -16,6 +16,7 @@ public class Liczba implements Instrukcja {
     }
 
     private static final String typ = "Liczba";
+
     @Override
     public String typ() {
         return typ;
@@ -23,7 +24,7 @@ public class Liczba implements Instrukcja {
 
     @Override
     public void stworzOdJsona(JsonObject json) {
-        assert(json.get("typ").getAsString().equals(this.typ()));
+        assert (json.get("typ").getAsString().equals(this.typ()));
         wartosc = json.get("wartosc").getAsDouble();
     }
 

@@ -6,7 +6,7 @@ import robson.Robson;
 import java.util.Objects;
 
 public class Warunek implements Instrukcja {
-    
+
     private Instrukcja warunek;
     private Instrukcja blok_prawda;
     private Instrukcja blok_falsz;
@@ -26,6 +26,7 @@ public class Warunek implements Instrukcja {
     }
 
     private static final String typ = "If";
+
     @Override
     public String typ() {
         return typ;
@@ -33,7 +34,7 @@ public class Warunek implements Instrukcja {
 
     @Override
     public void stworzOdJsona(JsonObject json) {
-        assert(json.get("typ").getAsString().equals(this.typ()));
+        assert (json.get("typ").getAsString().equals(this.typ()));
 
         JsonObject war = json.get("warunek").getAsJsonObject();
         warunek = Instrukcja.nowaInstrukcja(war.get("typ").getAsString());
@@ -46,28 +47,28 @@ public class Warunek implements Instrukcja {
         assert blok_prawda != null;
         blok_prawda.robson(robson);
         blok_prawda.stworzOdJsona(prawda);
-        
+
         if (json.has("blok_falsz")) {
             JsonObject falsz = json.get("blok_falsz").getAsJsonObject();
             blok_falsz = Instrukcja.nowaInstrukcja(falsz.get("typ").getAsString());
             assert blok_falsz != null;
             blok_falsz.robson(robson);
             blok_falsz.stworzOdJsona(falsz);
-        } 
+        }
     }
-    
+
     private String nazwaWarunku() {
         if (robson.gadatliwy())
             return "_warunek";
         return "w";
     }
-    
+
     private String nazwaPrawdy() {
         if (robson.gadatliwy())
             return "_wartoscBlokuPrawda";
         return "p";
     }
-    
+
     private String nazwaFalszu() {
         if (robson.gadatliwy())
             return "_wartoscBlokuFalsz";
@@ -77,7 +78,7 @@ public class Warunek implements Instrukcja {
     @Override
     public String toJava(String nazwaWyjscia) {
         String wynik = "";
-        wynik += "double " + nazwaWyjscia + nazwaWarunku() + " = 0, " + 
+        wynik += "double " + nazwaWyjscia + nazwaWarunku() + " = 0, " +
                 nazwaWyjscia + nazwaPrawdy() + " = 0, " + nazwaWyjscia + nazwaFalszu() + " = 0;\n";
         wynik += warunek.toJava(nazwaWyjscia + nazwaWarunku());
         wynik += "if (" + nazwaWyjscia + nazwaWarunku() + " != 0)\n";

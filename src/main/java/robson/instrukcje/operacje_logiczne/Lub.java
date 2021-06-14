@@ -4,11 +4,12 @@ import robson.Robson;
 
 public class Lub extends OperacjaLogiczna {
     private static final String typ = "Or";
+
     @Override
     public String typ() {
         return typ;
     }
-    
+
     @Override
     public double wykonaj() throws Robson.BladWykonania {
         double arg1 = argument1.wykonaj();

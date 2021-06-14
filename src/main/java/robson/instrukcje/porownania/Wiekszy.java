@@ -4,11 +4,11 @@ import robson.Robson;
 
 public class Wiekszy extends Porownanie {
     private static final String typ = ">";
+
     @Override
     public String typ() {
         return typ;
     }
-    
 
     @Override
     String symbolOperacji() {

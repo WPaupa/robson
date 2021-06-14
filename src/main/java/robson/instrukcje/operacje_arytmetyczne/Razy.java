@@ -4,11 +4,12 @@ import robson.Robson;
 
 public class Razy extends OperacjaArytmetyczna {
     private static final String typ = "Razy";
+
     @Override
     public String typ() {
         return typ;
     }
-    
+
     @Override
     public String symbolOperacji() {
         return "*";

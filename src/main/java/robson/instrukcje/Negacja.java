@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import robson.Robson;
 
 public class Negacja implements Instrukcja {
-    
+
     private Instrukcja argument;
     private transient Robson robson;
 
@@ -19,6 +19,7 @@ public class Negacja implements Instrukcja {
     }
 
     private static final String typ = "Not";
+
     @Override
     public String typ() {
         return typ;
@@ -26,7 +27,7 @@ public class Negacja implements Instrukcja {
 
     @Override
     public void stworzOdJsona(JsonObject json) {
-        assert(json.get("typ").getAsString().equals(this.typ()));
+        assert (json.get("typ").getAsString().equals(this.typ()));
 
         JsonObject arg = json.get("argument").getAsJsonObject();
         argument = Instrukcja.nowaInstrukcja(arg.get("typ").getAsString());

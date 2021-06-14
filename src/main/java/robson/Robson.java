@@ -14,32 +14,40 @@ import java.util.*;
 
 
 public class Robson {
-    private static class NieprawidlowyProgram extends Exception {}
-    public static class BladWykonania extends Exception {}
+    private static class NieprawidlowyProgram extends Exception {
+    }
+
+    public static class BladWykonania extends Exception {
+    }
+
     private Instrukcja program;
-    
+
     // do wykonywania programu
     private Map<String, Double> zmienne;
+
     public void ustawianieZmiennej(String nazwa, double wartosc) {
         zmienne.put(nazwa, wartosc);
     }
+
     public double wartoscZmiennej(String nazwa) {
-        return zmienne.getOrDefault(nazwa,0.);
+        return zmienne.getOrDefault(nazwa, 0.);
     }
-    
+
     // do deklarowania zmiennych w toJava
     private Set<String> nazwyZmiennych;
+
     public void dodanieZmiennej(String nazwa) {
         nazwyZmiennych.add(nazwa);
     }
-    
+
     // jeśli konstruktor Robsona zostanie wywołany z argumentem gadatliwy=true,
     // to nazwy zmiennych będą długie i opisowe. Zaleca się używania tej opcji tylko do bardzo prostych programów.
     private boolean gadatliwy;
+
     public boolean gadatliwy() {
         return gadatliwy;
     }
-    
+
     public void fromJson(String filename) throws NieprawidlowyProgram {
         Gson gson = new Gson();
         try {
@@ -52,9 +60,9 @@ public class Robson {
         } catch (IOException e) {
             e.printStackTrace();
             throw new NieprawidlowyProgram();
-        } 
+        }
     }
-    
+
     // w funkcjach toJson i toJava, program ma opcję wypisania na standardowe wyjście,
     // robi to wtedy, gdy filename jest nullem
     public void toJson(String filename) {
@@ -76,7 +84,7 @@ public class Robson {
             e.printStackTrace();
         }
     }
-    
+
     // chcemy zadbać o to, żeby pomocnicze zmienne w programie toJava
     // nie miały takich samych nazw jak zmienne z robsona. W tym celu sprawdzamy,
     // ile maksymalnie znaków $ mają zmienne z robsona i nasze zmienne pomocnicze będziemy
@@ -134,11 +142,12 @@ public class Robson {
         this.zmienne = null;
         return wynik;
     }
-    
+
     public Robson() {
         this.nazwyZmiennych = new HashSet<>();
         this.gadatliwy = false;
     }
+
     public Robson(boolean gadatliwy) {
         this.nazwyZmiennych = new HashSet<>();
         this.gadatliwy = gadatliwy;

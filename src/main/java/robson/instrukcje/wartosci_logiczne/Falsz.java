@@ -4,6 +4,7 @@ import robson.Robson;
 
 public class Falsz extends WartoscLogiczna {
     private static final String typ = "False";
+
     @Override
     public String typ() {
         return typ;

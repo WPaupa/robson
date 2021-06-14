@@ -4,12 +4,15 @@ import com.google.gson.JsonObject;
 import robson.Robson;
 
 public class Zmienna implements Instrukcja {
-    
+
     private String nazwa;
+
     public String nazwa() {
         return nazwa;
     }
+
     private transient Robson robson;
+
     @Override
     public void robson(Robson robson) {
         this.robson = robson;
@@ -21,6 +24,7 @@ public class Zmienna implements Instrukcja {
     }
 
     private static final String typ = "Zmienna";
+
     @Override
     public String typ() {
         return typ;
@@ -28,7 +32,7 @@ public class Zmienna implements Instrukcja {
 
     @Override
     public void stworzOdJsona(JsonObject json) {
-        assert(json.get("typ").getAsString().equals(this.typ()));
+        assert (json.get("typ").getAsString().equals(this.typ()));
         nazwa = json.get("nazwa").getAsString();
     }
 

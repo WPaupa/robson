@@ -13,6 +13,7 @@ public abstract class Porownanie implements Instrukcja {
             return "_argument1";
         return "1";
     }
+
     private String nazwaArg2() {
         if (robson.gadatliwy())
             return "_argument2";
@@ -20,7 +21,7 @@ public abstract class Porownanie implements Instrukcja {
     }
 
     private transient Robson robson;
-    
+
     @Override
     public void robson(Robson robson) {
         this.robson = robson;
@@ -31,10 +32,10 @@ public abstract class Porownanie implements Instrukcja {
         argument1.dodajZmienne();
         argument2.dodajZmienne();
     }
-    
+
     @Override
     public void stworzOdJsona(JsonObject json) {
-        assert(json.get("typ").getAsString().equals(this.typ()));
+        assert (json.get("typ").getAsString().equals(this.typ()));
 
         JsonObject arg1 = json.get("argument1").getAsJsonObject();
         argument1 = Instrukcja.nowaInstrukcja(arg1.get("typ").getAsString());
@@ -48,18 +49,18 @@ public abstract class Porownanie implements Instrukcja {
         argument2.robson(robson);
         argument2.stworzOdJsona(arg2);
     }
-    
+
     @Override
     public String toJava(String nazwaWyjscia) {
         String wynik = "";
-        wynik += "double " + nazwaWyjscia + nazwaArg1() + " = 0, " + nazwaWyjscia + nazwaArg2() +" = 0;\n";
+        wynik += "double " + nazwaWyjscia + nazwaArg1() + " = 0, " + nazwaWyjscia + nazwaArg2() + " = 0;\n";
         wynik += argument1.toJava(nazwaWyjscia + nazwaArg1()) + "\n";
         wynik += argument2.toJava(nazwaWyjscia + nazwaArg2()) + "\n";
         wynik += "if (" + nazwaWyjscia + nazwaArg1() + " " + symbolOperacji() + " " + nazwaWyjscia + nazwaArg2() + ")\n "
                 + nazwaWyjscia + " = 1;\n else\n " + nazwaWyjscia + " = 0;";
         return wynik;
     }
-    
+
     // pakietowe, bo użyte tylko porównaniach
     abstract String symbolOperacji();
 }

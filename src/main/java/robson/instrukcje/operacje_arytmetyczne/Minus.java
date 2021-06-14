@@ -4,6 +4,7 @@ import robson.Robson;
 
 public class Minus extends OperacjaArytmetyczna {
     private static final String typ = "Minus";
+
     @Override
     public String typ() {
         return typ;

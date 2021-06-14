@@ -8,28 +8,28 @@ import robson.instrukcje.porownania.*;
 import robson.instrukcje.wartosci_logiczne.*;
 
 public interface Instrukcja {
-    
+
     String typ();
 
     // daje instrukcji (ale nie podinstrukcjom) instancję klasy Robson, w której są trzymane jej zmienne
     void robson(Robson robson);
-    
+
     // tworzy klasy dla wszystkich podinstrukcji.
     // wyłuskuje z danego JsonObject dane do siebie i wszystkich swoich podinstrukcji. Potem przypisuje
     // wszystkim swoim podinstrukcjom swoją instancję klasy Robson.
     void stworzOdJsona(JsonObject json);
-    
+
     // przed poniższymi metodami musi być wywołana metoda robson, a potem stworzOdJsona
-    
+
     // generuje kod javowy, który do istniejącej już zmiennej o podanej nazwie zapisuje
     // wynik instrukcji.
     // Wypisany kod działa w ten sposób, że każda Instrukcja tworzy pomocnicze zmienne
     // na wyniki swoich podinstrukcji (argumentów), prosi toJava o przypisanie tym zmiennym tych wyników
     // i na koniec przypisuje zmiennej o podanej nazwie swój wynik.
     String toJava(String nazwaWyjscia);
-    
+
     double wykonaj() throws Robson.BladWykonania;
-    
+
     // dodaje wszystkie nazwy zmiennych występujące w programie do zbioru w przypisanej klasie Robson
     void dodajZmienne();
 
@@ -78,5 +78,5 @@ public interface Instrukcja {
             return new Zmienna();
         return null;
     }
-    
+
 }

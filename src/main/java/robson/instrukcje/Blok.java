@@ -8,7 +8,7 @@ import robson.Robson;
 public class Blok implements Instrukcja {
     private Instrukcja[] instrukcje;
     private transient Robson robson;
-    
+
     @Override
     public void robson(Robson robson) {
         this.robson = robson;
@@ -23,6 +23,7 @@ public class Blok implements Instrukcja {
     }
 
     private static final String typ = "Blok";
+
     @Override
     public String typ() {
         return typ;

@@ -32,7 +32,7 @@ public abstract class OperacjaArytmetyczna implements Instrukcja {
         argument1.dodajZmienne();
         argument2.dodajZmienne();
     }
-    
+
     @Override
     public void stworzOdJsona(JsonObject json) {
         assert (json.get("typ").getAsString().equals(this.typ()));
@@ -60,7 +60,7 @@ public abstract class OperacjaArytmetyczna implements Instrukcja {
         wynik += nazwaWyjscia + " = " + nazwaWyjscia + nazwaArg1() + " " + symbolOperacji() + " " + nazwaWyjscia + nazwaArg2() + ";";
         return wynik;
     }
-    
+
     // pakietowe, żeby było tylko w klasach operacji
     abstract String symbolOperacji();
 }

@@ -32,7 +32,7 @@ public class TestyJednostkowe extends TestCase {
             assert false;
         }
     }
-    
+
     public void testujForum() {
         try {
             Robson robson = new Robson();
@@ -45,7 +45,7 @@ public class TestyJednostkowe extends TestCase {
             assert false;
         }
     }
-    
+
     public void testujEuklides() {
         try {
             Robson robson = new Robson();
@@ -71,7 +71,7 @@ public class TestyJednostkowe extends TestCase {
             assert false;
         }
     }
-    
+
     public void testujMyTest() {
         try {
             Robson robson = new Robson();

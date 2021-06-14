@@ -9,11 +9,11 @@ public abstract class WartoscLogiczna implements Instrukcja {
     @Override
     public void robson(Robson robson) {
     }
-    
+
     @Override
     public void stworzOdJsona(JsonObject json) {
     }
-    
+
     @Override
     public void dodajZmienne() {
     }

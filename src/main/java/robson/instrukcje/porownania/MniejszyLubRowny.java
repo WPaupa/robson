@@ -4,6 +4,7 @@ import robson.Robson;
 
 public class MniejszyLubRowny extends Porownanie {
     private static final String typ = "<=";
+
     @Override
     public String typ() {
         return typ;

@@ -23,7 +23,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    
+
     <dependencies>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -65,5 +65,5 @@
             </plugin>
         </plugins>
     </build>
-    
+
 </project>
