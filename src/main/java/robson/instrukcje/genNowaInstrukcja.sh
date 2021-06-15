@@ -1,5 +1,5 @@
 #!/bin/bash
-# nie musimy siÄ™ za bardzo martwiÄ‡ o poprawnoĹ›Ä‡ plikĂłw, bo sami je ukĹ‚adamy
+# nie musimy sie za bardzo martwic o poprawnosc plikow, bo sami je ukladamy
 # shellcheck disable=SC2044
 for f in $(find . -name '*.java'); do
   name=$(basename "$f" .java)
