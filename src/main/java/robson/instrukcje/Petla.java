@@ -85,8 +85,6 @@ public class Petla implements Instrukcja {
         while (war != 0) {
             blok.wykonaj();
             war = warunek.wykonaj();
-            if (war != 0 && war != 1)
-                throw new Robson.BladWykonania();
         }
 
         return 0;
