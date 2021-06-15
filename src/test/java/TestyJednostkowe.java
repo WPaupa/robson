@@ -1,13 +1,13 @@
-package testy;
-
-import junit.framework.*;
+import org.junit.jupiter.api.Test;
 import robson.Robson;
 import robson.instrukcje.Instrukcja;
 
 import java.util.Objects;
 
-public class TestyJednostkowe extends TestCase {
-    public void testujPrzyklad1() {
+// klasa i metody pakietowe, bo wymaga tego JUnit
+class TestyJednostkowe {
+    @Test
+    void testujPrzyklad1() {
         try {
             Robson robson = new Robson(true);
             robson.fromJson("przyklad1.json");
@@ -20,7 +20,8 @@ public class TestyJednostkowe extends TestCase {
         }
     }
 
-    public void testujFibonacci() {
+    @Test
+    void testujFibonacci() {
         try {
             Robson robson = new Robson();
             robson.fromJson("fibonacci.json");
@@ -33,7 +34,8 @@ public class TestyJednostkowe extends TestCase {
         }
     }
 
-    public void testujForum() {
+    @Test
+    void testujForum() {
         try {
             Robson robson = new Robson();
             robson.fromJson("forum.json");
@@ -46,7 +48,8 @@ public class TestyJednostkowe extends TestCase {
         }
     }
 
-    public void testujEuklides() {
+    @Test
+    void testujEuklides() {
         try {
             Robson robson = new Robson();
             robson.fromJson("euklides.json");
@@ -59,7 +62,8 @@ public class TestyJednostkowe extends TestCase {
         }
     }
 
-    public void testujCzyPierwsza() {
+    @Test
+    void testujCzyPierwsza() {
         try {
             Robson robson = new Robson();
             robson.fromJson("czyPierwsza.json");
@@ -72,7 +76,8 @@ public class TestyJednostkowe extends TestCase {
         }
     }
 
-    public void testujMyTest() {
+    @Test
+    void testujMyTest() {
         try {
             Robson robson = new Robson();
             robson.fromJson("myTest.json");
@@ -85,7 +90,8 @@ public class TestyJednostkowe extends TestCase {
         }
     }
 
-    public void testujSilnia() {
+    @Test
+    void testujSilnia() {
         try {
             Robson robson = new Robson();
             robson.fromJson("silnia.json");
@@ -98,7 +104,8 @@ public class TestyJednostkowe extends TestCase {
         }
     }
 
-    public void testujBinomial() {
+    @Test
+    void testujBinomial() {
         try {
             Robson robson = new Robson();
             robson.fromJson("binomial.json");
@@ -111,7 +118,8 @@ public class TestyJednostkowe extends TestCase {
         }
     }
 
-    public void testujPochodnaArytmetyczna() {
+    @Test
+    void testujPochodnaArytmetyczna() {
         try {
             Robson robson = new Robson();
             robson.fromJson("pochodnaArytmetyczna.json");
@@ -124,7 +132,8 @@ public class TestyJednostkowe extends TestCase {
         }
     }
 
-    public void testujInstrukcje() {
+    @Test
+    void testujInstrukcje() {
         try {
             System.out.println(Objects.requireNonNull(Instrukcja.nowaInstrukcja("Blok")).typ());
         } catch (Exception e) {
